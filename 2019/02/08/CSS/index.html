@@ -96,20 +96,28 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Secret Garden">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Three Parts   Cascade and SpecificityCascade: process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a cert">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How CSS is Parsed">
+<meta property="og:url" content="http://yoursite.com/2019/02/08/CSS/index.html">
 <meta property="og:site_name" content="Secret Garden">
+<meta property="og:description" content="Three Parts   Cascade and SpecificityCascade: process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a cert">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/02/08/CSS/cascade.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/08/CSS/unitexample.png">
+<meta property="og:updated_time" content="2019-02-08T23:33:25.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Secret Garden">
+<meta name="twitter:title" content="How CSS is Parsed">
+<meta name="twitter:description" content="Three Parts   Cascade and SpecificityCascade: process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a cert">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/08/CSS/cascade.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/08/CSS/">
 
 
 
@@ -119,7 +127,7 @@
   };
 </script>
 
-  <title>Secret Garden</title>
+  <title>How CSS is Parsed | Secret Garden</title>
   
 
 
@@ -167,8 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -210,7 +217,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -352,9 +359,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -386,10 +393,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/08/CSS/" class="post-title-link" itemprop="url">How CSS is Parsed</a>
+          <h1 class="post-title" itemprop="name headline">How CSS is Parsed
+
               
             
           </h1>
@@ -453,23 +458,33 @@
       
 
       
-        
-          
-            <p>
-              Three Parts  
-Cascade and SpecificityCascade: process of combining different stylesheets and resolving conflicts between different CSS rules and decla
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/08/CSS/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <p>Three Parts  </p>
+<h3 id="Cascade-and-Specificity"><a href="#Cascade-and-Specificity" class="headerlink" title="Cascade and Specificity"></a>Cascade and Specificity</h3><p>Cascade: process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a certain element.</p>
+<p>1.Cascade Priority:<br><code>Importance -&gt; Specificity -&gt; Source Order</code><br><img src="/2019/02/08/CSS/cascade.png"></p>
+<p>2.Summary:  </p>
+<ul>
+<li>CSS declarations marked with !important have the highest priority.(only use it as a last method).  </li>
+<li>Inline styles &gt; exteral stylesheets style.  </li>
+<li>The universal selector * has no specificity value(0, 0, 0, 0).  </li>
+<li>When same importance and specificity, the last declaration will override all other declarations.</li>
+<li>Rely more on specificity than on the order of selectors(because order changes more easily).  </li>
+<li>Always put the 3rd-party stylesheets before your own stylesheets.</li>
+</ul>
+<p>3.Example<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">id</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pull-right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button button-danger"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">href</span>=<span class="string">"link.html"</span>&gt;</span>Don't click here!<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: purple;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">div</span><span class="selector-class">.pull-right</span> <span class="selector-tag">a</span><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">a</span><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The button background color is red.<br>But if add “! important” at the end of any color, like:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: purple <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The bg color is purple. Except for the a.button:hover, because it changes color only if hover.</p>
+<p>If cursor hover the button, the color doesn’t change, because the precedency is lower than its top one. Solve it by changing to:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">div</span><span class="selector-class">.pull-right</span> <span class="selector-tag">a</span><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>now when hover, the color is green.</p>
+<h3 id="Value-Processing"><a href="#Value-Processing" class="headerlink" title="Value Processing"></a>Value Processing</h3><p>Each property has a inital value.<br>1.The order of value in the processing<br>declared value, cascaded value(after the cascade), specified value(default value, if there is no cascaded value), computed value(convert relative value to absolute, eg. 1.5rem -&gt; xx px), Used value(final calculation based on layout), Actual value(browser and device restriction, round the decimal)</p>
+<p>2.The unit computation<br><img src="/2019/02/08/CSS/unitexample.png" title="The Unit Computation"></p>
+<h3 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h3><ul>
+<li>Not all the properties has the inheritance.</li>
+<li>Inheritance only works if there is no value for the property.</li>
+<li>The ‘inherit’ keyword forces inheritance on a certain property.Eg. box-sizing:inheritance;</li>
+<li>It is computed value that passed from parent to child, not declared value.</li>
+</ul>
+
       
     </div>
 
@@ -490,323 +505,36 @@ Cascade and SpecificityCascade: process of combining different stylesheets and r
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/Backpack/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Annie Hu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Secret Garden">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/08/Backpack/" class="post-title-link" itemprop="url">Backpack</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-08 13:13:57 / Modified: 13:23:21" itemprop="dateCreated datePublished" datetime="2019-02-08T13:13:57-06:00">2019-02-08</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-            <p>
-              Description0-1背包问题:N个物品，背包大小为V，每种物品仅有一件，要么取要么不取完全背包问题:N个物品，背包大小为V，每种物品有无限件，可以取多次多重背包为题:N个物品，背包大小为V，每种物品做多有M_i件，可以取多次  
-求：1）背包里能装进的物品的总价值最大是多少？2）装满背包有几
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/08/Backpack/#more" rel="contents">
-                Read more &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/08/Backpack/" rel="next" title="Backpack">
+                <i class="fa fa-chevron-left"></i> Backpack
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/DP/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Annie Hu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Secret Garden">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/08/DP/" class="post-title-link" itemprop="url">DP</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-08 12:24:50 / Modified: 12:31:56" itemprop="dateCreated datePublished" datetime="2019-02-08T12:24:50-06:00">2019-02-08</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>
-              1.动态规划常见题型1.通常用于以下几种：最优解/max,min存不存在/yes,no多少个可行解
-六大问题：1）坐标型 dp[i]表示从起点到坐标i2）序列行 dp[i]表示前i个元素3）背包型4）区间型5）划分型6）双序列行
-2.滚动数组需要多少个状态，就new多少个。例如：如果某状态i只与i 
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/08/DP/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -816,316 +544,15 @@ Cascade and SpecificityCascade: process of combining different stylesheets and r
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/House-RobberI-II-III/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Annie Hu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Secret Garden">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/08/House-RobberI-II-III/" class="post-title-link" itemprop="url">House RobberI II III</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-08 10:34:53 / Modified: 12:32:35" itemprop="dateCreated datePublished" datetime="2019-02-08T10:34:53-06:00">2019-02-08</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              1.IEach house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security 
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/08/House-RobberI-II-III/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Annie Hu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Secret Garden">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/30/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-01-30 12:28:53" itemprop="dateCreated datePublished" datetime="2019-01-30T12:28:53-06:00">2019-01-30</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/30/hello-world/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1146,8 +573,17 @@ Cascade and SpecificityCascade: process of combining different stylesheets and r
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1206,6 +642,23 @@ Cascade and SpecificityCascade: process of combining different stylesheets and r
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cascade-and-Specificity"><span class="nav-number">1.</span> <span class="nav-text">Cascade and Specificity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Value-Processing"><span class="nav-number">2.</span> <span class="nav-text">Value Processing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inheritance"><span class="nav-number">3.</span> <span class="nav-text">Inheritance</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1335,6 +788,10 @@ Cascade and SpecificityCascade: process of combining different stylesheets and r
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -1345,6 +802,8 @@ Cascade and SpecificityCascade: process of combining different stylesheets and r
 
   
 
+
+  
 
 
   
