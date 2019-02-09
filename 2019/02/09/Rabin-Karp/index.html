@@ -96,20 +96,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Secret Garden">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="Rabin-Karp算法类似于hashing function的原理。Rabin-Karp的复杂度通常是O(n)。 为了避免逐个char对source和pattern进行比较，可以尝试一次性判断两者是否相等，因此需要一个好的hash function。通过hash function，可算出pattern的hash code，然后将它和source的子串的hash code进行比较。 唯一的问题在于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rabin Karp">
+<meta property="og:url" content="http://yoursite.com/2019/02/09/Rabin-Karp/index.html">
 <meta property="og:site_name" content="Secret Garden">
+<meta property="og:description" content="Rabin-Karp算法类似于hashing function的原理。Rabin-Karp的复杂度通常是O(n)。 为了避免逐个char对source和pattern进行比较，可以尝试一次性判断两者是否相等，因此需要一个好的hash function。通过hash function，可算出pattern的hash code，然后将它和source的子串的hash code进行比较。 唯一的问题在于">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-09T16:32:24.038Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Secret Garden">
+<meta name="twitter:title" content="Rabin Karp">
+<meta name="twitter:description" content="Rabin-Karp算法类似于hashing function的原理。Rabin-Karp的复杂度通常是O(n)。 为了避免逐个char对source和pattern进行比较，可以尝试一次性判断两者是否相等，因此需要一个好的hash function。通过hash function，可算出pattern的hash code，然后将它和source的子串的hash code进行比较。 唯一的问题在于">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/09/Rabin-Karp/">
 
 
 
@@ -119,7 +123,7 @@
   };
 </script>
 
-  <title>Archive | Secret Garden</title>
+  <title>Rabin Karp | Secret Garden</title>
   
 
 
@@ -167,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -277,7 +281,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -348,384 +352,186 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/09/Rabin-Karp/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Annie Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secret Garden">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Rabin Karp
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-09 00:06:50 / Modified: 10:32:24" itemprop="dateCreated datePublished" datetime="2019-02-09T00:06:50-06:00">2019-02-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        Um..! 9 posts in total. Keep on posting.
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/09/Quick-Select/" itemprop="url">
             
-              <span itemprop="name">Quick Select</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-09T10:50:34-06:00" content="2019-02-09">
-          02-09
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/09/Quick-Sort-Merge-Sort/" itemprop="url">
-            
-              <span itemprop="name">Quick Sort & Merge Sort</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-09T10:50:06-06:00" content="2019-02-09">
-          02-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/09/Rabin-Karp/" itemprop="url">
-            
-              <span itemprop="name">Rabin Karp</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-09T00:06:50-06:00" content="2019-02-09">
-          02-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>Rabin-Karp算法类似于hashing function的原理。Rabin-Karp的复杂度通常是O(n)。</p>
+<p>为了避免逐个char对source和pattern进行比较，可以尝试一次性判断两者是否相等，因此需要一个好的hash function。通过hash function，可算出pattern的hash code，然后将它和source的子串的hash code进行比较。</p>
+<p>唯一的问题在于需要找到一个hash function ，它需要能够对不同的字符串返回不同的hash code。一般magic number选31是因为根据经验，选择比较大的素数可以减少hash冲突。</p>
+<p>以”hello world”为例，假设它的哈希值hash(‘hello world’)=12345。如果hash(‘he’)=1，就可以说pattern “he” 包含在”hello world”中。由此，可以每次从source中取出长度为m = pattern.length()的子串，将该子串进行哈希，并将其hash code与pattern的hash code进行比较。</p>
+<p>注意相同string的hashcode一定相同，但是反过来不一定，即有哈希冲突的现象存在。</p>
+<p>所以当找到两个相同的hashcode后，还需要对这两个长度为m的字符串进行额外的比对（当然，如果不相等也就不用比对了，其实大部分的时间省在这上面），这时比对的开销是O(m)。<br>最坏情况下，文本中所有长度为m的子串(一共n-m+1个)都和pattern匹配，所以算法复杂度为O((n-m+1)*m)。然而实际情况下，需要进一步比对的子串个数总是有限的（假设为c个），那么算法的期望匹配时间就变成O((n-m+1)+cm)=O(n+m)。</p>
+<p>mod的作用是让所有的运算结果的范围都在一定范围以内，因为如果不加mod，hash值的大小可能会因为字符串很长变得很大，所以要使用一个mod将其映射到一定范围之内，mod后的结果对于加、乘都是不变的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(a + b) % mod = a % mod + b % mod</span><br><span class="line">(a * b) % mod = [(a % mod) * (b % mod)] % mod</span><br><span class="line"></span><br><span class="line">对于减法，可能会变成负数，所以需要再加上一个mod</span><br><span class="line">(a - b) % mod = [(a % mod) - (b % mod) + mod] % mod</span><br><span class="line">对于除法，% mod之后可能无法整除</span><br></pre></td></tr></table></figure></p>
+<p>例题：<br>Implement function in O(n + m) time.<br>return the first index of the pattern string in a source string. The length of the pattern string is m and the length of the source string is n. If pattern does not exist in source, just return -1.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="comment">//hash function: (a*31^2 + b*31 + c) % BASE = ((a*31^2 % BASE + b*31) % BASE + c) % BASE</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> BASE = <span class="number">1000000</span>;<span class="comment">//要取得mod，希望这个值越大越好，以让31^(n-1)不越界</span></span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr2</span><span class="params">(String source, String target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(source == <span class="keyword">null</span> || target == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> tlen = target.length();</span><br><span class="line">        <span class="keyword">if</span>(tlen == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//calculate 31^tlen，而不是31^(tlen-1)</span></span><br><span class="line">        <span class="comment">//因为要移除的是前一个window的start，此时该处的值*31^tlen加入到hashCode里了</span></span><br><span class="line">        <span class="keyword">int</span> power = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tlen; i++)&#123;</span><br><span class="line">            power = (power * <span class="number">31</span>) % BASE;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> targetCode = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tlen; i++)&#123;</span><br><span class="line">            targetCode = (targetCode * <span class="number">31</span> + target.charAt(i)) % BASE;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> hashCode = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; source.length(); i++)&#123;</span><br><span class="line">            hashCode = (hashCode * <span class="number">31</span> + source.charAt(i)) % BASE;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i &lt; tlen - <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">           <span class="comment">//当i到tlen时，只需要abc，此时却是abcd</span></span><br><span class="line">           <span class="comment">//相当于sliding window，i-len是前一个window的start index</span></span><br><span class="line">            <span class="keyword">if</span>(i &gt;= tlen)&#123;</span><br><span class="line">                hashCode = hashCode - (source.charAt(i - tlen) * power) % BASE;</span><br><span class="line">                <span class="keyword">if</span>(hashCode &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                    hashCode += BASE;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//当i = n-1或者i &gt;= n时，到这里的substring都已满足长度为n</span></span><br><span class="line">            <span class="keyword">if</span>(hashCode == targetCode)&#123;</span><br><span class="line">                <span class="keyword">if</span>(source.substring(i - tlen + <span class="number">1</span>, i + <span class="number">1</span>).equals(target))&#123;</span><br><span class="line">                    <span class="keyword">return</span> i - tlen + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的hash叫滚动hash，因为对于每一个字符串，其hash值都能由它的上一个前缀递推过来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hash(abc) = ((a * seed) + b) * seed + c</span><br><span class="line">hash(abcd)= (((a * seed) + b) * seed + c) * seed + d</span><br><span class="line">          = hash(abc) * seed + d</span><br><span class="line">hash(cd) = hash(abcd) - hash(ab) * seed^2</span><br><span class="line"></span><br><span class="line">hash(s[x,y]) = hash(s[1, y]) - hash(s[1, x-1])*seed^(len(s[x,y]))</span><br></pre></td></tr></table></figure></p>
+<p>由上可以观察得到，只要知道了某string的前缀的hashcode，那么该string的任意部分都可以在O(1)内计算出来</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/08/CSS-Render/" itemprop="url">
-            
-              <span itemprop="name">How CSS Render Website</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-08T17:34:23-06:00" content="2019-02-08">
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/08/CSS/" itemprop="url">
-            
-              <span itemprop="name">How CSS is Parsed</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-08T16:40:15-06:00" content="2019-02-08">
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/08/Backpack/" itemprop="url">
-            
-              <span itemprop="name">Backpack</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-08T13:13:57-06:00" content="2019-02-08">
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/08/DP/" itemprop="url">
-            
-              <span itemprop="name">DP</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-08T12:24:50-06:00" content="2019-02-08">
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/02/08/House-RobberI-II-III/" itemprop="url">
-            
-              <span itemprop="name">House RobberI II III</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-08T10:34:53-06:00" content="2019-02-08">
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/30/hello-world/" itemprop="url">
-            
-              <span itemprop="name">Hello World</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-30T12:28:53-06:00" content="2019-01-30">
-          01-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/08/CSS-Render/" rel="next" title="How CSS Render Website">
+                <i class="fa fa-chevron-left"></i> How CSS Render Website
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/09/Quick-Sort-Merge-Sort/" rel="prev" title="Quick Sort & Merge Sort">
+                Quick Sort & Merge Sort <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -941,6 +747,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -951,6 +761,8 @@
 
   
 
+
+  
 
 
   

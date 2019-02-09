@@ -104,13 +104,10 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="Three Parts   Cascade and SpecificityCascade: process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a cert">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/02/08/CSS/cascade.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/08/CSS/unitexample.png">
 <meta property="og:updated_time" content="2019-02-08T23:33:25.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How CSS is Parsed">
 <meta name="twitter:description" content="Three Parts   Cascade and SpecificityCascade: process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a cert">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/08/CSS/cascade.png">
 
 
 
@@ -460,7 +457,7 @@
       
         <p>Three Parts  </p>
 <h3 id="Cascade-and-Specificity"><a href="#Cascade-and-Specificity" class="headerlink" title="Cascade and Specificity"></a>Cascade and Specificity</h3><p>Cascade: process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a certain element.</p>
-<p>1.Cascade Priority:<br><code>Importance -&gt; Specificity -&gt; Source Order</code><br><img src="/2019/02/08/CSS/cascade.png"></p>
+<p>1.Cascade Priority:<br><code>Importance -&gt; Specificity -&gt; Source Order</code><br></p>
 <p>2.Summary:  </p>
 <ul>
 <li>CSS declarations marked with !important have the highest priority.(only use it as a last method).  </li>
@@ -477,7 +474,7 @@
 <p>If cursor hover the button, the color doesn’t change, because the precedency is lower than its top one. Solve it by changing to:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">div</span><span class="selector-class">.pull-right</span> <span class="selector-tag">a</span><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>now when hover, the color is green.</p>
 <h3 id="Value-Processing"><a href="#Value-Processing" class="headerlink" title="Value Processing"></a>Value Processing</h3><p>Each property has a inital value.<br>1.The order of value in the processing<br>declared value, cascaded value(after the cascade), specified value(default value, if there is no cascaded value), computed value(convert relative value to absolute, eg. 1.5rem -&gt; xx px), Used value(final calculation based on layout), Actual value(browser and device restriction, round the decimal)</p>
-<p>2.The unit computation<br><img src="/2019/02/08/CSS/unitexample.png" title="The Unit Computation"></p>
+<p>2.The unit computation<br></p>
 <h3 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h3><ul>
 <li>Not all the properties has the inheritance.</li>
 <li>Inheritance only works if there is no value for the property.</li>
@@ -602,7 +599,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -621,7 +618,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

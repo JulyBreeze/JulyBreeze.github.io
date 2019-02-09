@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="1.动态规划常见题型1.通常用于以下几种：最优解/max,min存不存在/yes,no多少个可行解 六大问题：1）坐标型 dp[i]表示从起点到坐标i2）序列行 dp[i]表示前i个元素3）背包型4）区间型5）划分型6）双序列行 2.滚动数组需要多少个状态，就new多少个。例如：如果某状态i只与i - 1有关，就new int[2] 123f[i] = max(f[i-1], f[i-2])f[i">
-<meta name="keywords" content="DP">
+  <meta name="description" content="Quick Sort 从整体到局部选取一个pivot，&amp;gt;的放右边，&amp;lt;放左边，=的情况左右都可以注意 = 号这个是为了避免极端情况，比如几乎全是1，只有几个数不一样，如果严格的把=归于左边或右边，partition的线可能就不在中间。希望partition的线在中间，是均匀的划分。体现在code里的那两个while里的条件，就是 &amp;lt; 和 &amp;gt; 。 123456789101112">
+<meta name="keywords" content="sort,Divide and Conquer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DP">
-<meta property="og:url" content="http://yoursite.com/2019/02/08/DP/index.html">
+<meta property="og:title" content="Quick Sort &amp; Merge Sort">
+<meta property="og:url" content="http://yoursite.com/2019/02/09/Quick-Sort-Merge-Sort/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="1.动态规划常见题型1.通常用于以下几种：最优解/max,min存不存在/yes,no多少个可行解 六大问题：1）坐标型 dp[i]表示从起点到坐标i2）序列行 dp[i]表示前i个元素3）背包型4）区间型5）划分型6）双序列行 2.滚动数组需要多少个状态，就new多少个。例如：如果某状态i只与i - 1有关，就new int[2] 123f[i] = max(f[i-1], f[i-2])f[i">
+<meta property="og:description" content="Quick Sort 从整体到局部选取一个pivot，&amp;gt;的放右边，&amp;lt;放左边，=的情况左右都可以注意 = 号这个是为了避免极端情况，比如几乎全是1，只有几个数不一样，如果严格的把=归于左边或右边，partition的线可能就不在中间。希望partition的线在中间，是均匀的划分。体现在code里的那两个while里的条件，就是 &amp;lt; 和 &amp;gt; 。 123456789101112">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-08T18:31:56.531Z">
+<meta property="og:updated_time" content="2019-02-09T17:21:04.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DP">
-<meta name="twitter:description" content="1.动态规划常见题型1.通常用于以下几种：最优解/max,min存不存在/yes,no多少个可行解 六大问题：1）坐标型 dp[i]表示从起点到坐标i2）序列行 dp[i]表示前i个元素3）背包型4）区间型5）划分型6）双序列行 2.滚动数组需要多少个状态，就new多少个。例如：如果某状态i只与i - 1有关，就new int[2] 123f[i] = max(f[i-1], f[i-2])f[i">
+<meta name="twitter:title" content="Quick Sort &amp; Merge Sort">
+<meta name="twitter:description" content="Quick Sort 从整体到局部选取一个pivot，&amp;gt;的放右边，&amp;lt;放左边，=的情况左右都可以注意 = 号这个是为了避免极端情况，比如几乎全是1，只有几个数不一样，如果严格的把=归于左边或右边，partition的线可能就不在中间。希望partition的线在中间，是均匀的划分。体现在code里的那两个while里的条件，就是 &amp;lt; 和 &amp;gt; 。 123456789101112">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/08/DP/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/09/Quick-Sort-Merge-Sort/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>DP | Secret Garden</title>
+  <title>Quick Sort & Merge Sort | Secret Garden</title>
   
 
 
@@ -373,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/DP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/09/Quick-Sort-Merge-Sort/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Annie Hu">
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DP
+          <h1 class="post-title" itemprop="name headline">Quick Sort & Merge Sort
 
               
             
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="Created: 2019-02-08 12:24:50 / Modified: 12:31:56" itemprop="dateCreated datePublished" datetime="2019-02-08T12:24:50-06:00">2019-02-08</time>
+              <time title="Created: 2019-02-09 10:50:06 / Modified: 11:21:04" itemprop="dateCreated datePublished" datetime="2019-02-09T10:50:06-06:00">2019-02-09</time>
             
 
             
@@ -455,11 +455,35 @@
       
 
       
-        <h3 id="1-动态规划常见题型"><a href="#1-动态规划常见题型" class="headerlink" title="1.动态规划常见题型"></a>1.动态规划常见题型</h3><p>1.通常用于以下几种：<br>最优解/max,min<br>存不存在/yes,no<br>多少个可行解</p>
-<p>六大问题：<br>1）坐标型 dp[i]表示从起点到坐标i<br>2）序列行 dp[i]表示前i个元素<br>3）背包型<br>4）区间型<br>5）划分型<br>6）双序列行</p>
-<h3 id="2-滚动数组"><a href="#2-滚动数组" class="headerlink" title="2.滚动数组"></a>2.滚动数组</h3><p>需要多少个状态，就new多少个。<br>例如：如果某状态i只与i - 1有关，就new int[2]</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[i] = max(f[i-1], f[i-2])</span><br><span class="line"></span><br><span class="line">f[i] = max(f[(i-1) % 2], f[(i-2) % 2])</span><br></pre></td></tr></table></figure>
-<h3 id="3-循环数组的解决办法："><a href="#3-循环数组的解决办法：" class="headerlink" title="3.循环数组的解决办法："></a>3.循环数组的解决办法：</h3><p>a) 取反<br>b) 分裂<br>c) 倍增</p>
+        <h3 id="Quick-Sort-从整体到局部"><a href="#Quick-Sort-从整体到局部" class="headerlink" title="Quick Sort 从整体到局部"></a>Quick Sort 从整体到局部</h3><p>选取一个pivot，&gt;的放右边，&lt;放左边，=的情况左右都可以<br>注意 = 号这个是为了避免极端情况，比如几乎全是1，只有几个数不一样，如果严格的把=归于左边或右边，partition的线可能就不在中间。希望partition的线在中间，是均匀的划分。<br>体现在code里的那两个while里的条件，就是 &lt; 和 &gt; 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortIntegers</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        quickSort(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start &gt;= end)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//1. pivot is value, not index</span></span><br><span class="line">        <span class="keyword">int</span> pivot = nums[(start + end) / <span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> left = start, right = end;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//2. left &lt;= right, not &lt;</span></span><br><span class="line">        <span class="comment">//否则的话会造成overflow，比如[3,1,2,5,4]，确保递归的时候两个区间不要有重合。</span></span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right) &#123;</span><br><span class="line">            <span class="comment">//3.nums[left] &lt; pivot not &lt;=</span></span><br><span class="line">            <span class="keyword">while</span>(left &lt;= right &amp;&amp; nums[left] &lt; pivot)&#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(left &lt;= right &amp;&amp; nums[right] &gt; pivot)&#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(left &lt;= right)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = nums[left];</span><br><span class="line">                nums[left] = nums[right];</span><br><span class="line">                nums[right] = temp;</span><br><span class="line">                left++;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//while 后，left在右边，right在左边</span></span><br><span class="line">        quickSort(nums, start, right);</span><br><span class="line">        quickSort(nums, left, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Merge-Sort-从局部到整体"><a href="#Merge-Sort-从局部到整体" class="headerlink" title="Merge Sort 从局部到整体"></a>Merge Sort 从局部到整体</h3><p>将数据分成两部分，将两个子部分进行递归的merge排序；然后将已经有序的两个子部分进行合并，最终完成排序。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//temp array不能放在mergeSort 和 merge函数中，否则当n数组很大的时候，会导致mle。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortIntegers</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        mergeSort(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>, temp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">int</span>[] temp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start &gt;= end)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        mergeSort(nums, start, (start + end)/<span class="number">2</span>, temp);</span><br><span class="line">        mergeSort(nums, (start + end)/<span class="number">2</span> + <span class="number">1</span>, end, temp);</span><br><span class="line">        merge(nums, start, end, temp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">int</span>[] temp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (start + end)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> leftIndex = start;</span><br><span class="line">        <span class="keyword">int</span> rightIndex = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> i = start;<span class="comment">//注意这里，遍历temp的指针是从start开始的</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(leftIndex &lt;= mid &amp;&amp; rightIndex &lt;= end)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[leftIndex] &lt; nums[rightIndex])&#123;</span><br><span class="line">                temp[i++] = nums[leftIndex++];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                temp[i++] = nums[rightIndex++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(leftIndex &lt;= mid) &#123;</span><br><span class="line">            temp[i++] = nums[leftIndex++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(rightIndex &lt;= end) &#123;</span><br><span class="line">            temp[i++] = nums[rightIndex++];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = start; k &lt;= end; k++)&#123;</span><br><span class="line">            nums[k] = temp[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Compare"><a href="#Compare" class="headerlink" title="Compare"></a>Compare</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>time</th>
+<th>space</th>
+<th>other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quickSort</td>
+<td>O(nlogn) 极端时O(n^2)</td>
+<td>O(1)</td>
+<td></td>
+</tr>
+<tr>
+<td>mergeSort</td>
+<td>O(nlogn)</td>
+<td>O(n)</td>
+<td>stable</td>
+</tr>
+</tbody>
+</table>
+<p>MergeSort是一种稳定的排序算法，quickSort不然。(稳定排序：duplicate的数，1和1’，如果排序结束后，1还是在1’前，保证原来顺序就是稳定排序)</p>
+<h3 id="Example-Sort-List"><a href="#Example-Sort-List" class="headerlink" title="Example: Sort List"></a>Example: Sort List</h3><p>因为是List，用mergesort比较好，quickSort还要找tail点。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">sortList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//base case</span></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        <span class="keyword">if</span>(head.next == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//slow指向的是中间偏左的点</span></span><br><span class="line">        <span class="comment">//if fast= head, 则slow指向的是中间偏右的点</span></span><br><span class="line">        <span class="comment">//因为找到中间点后，需要把两个子list分割开，所以选择找中间偏左的点</span></span><br><span class="line">        ListNode slow = head, fast = head.next;</span><br><span class="line">        <span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ListNode secondHead = slow.next;</span><br><span class="line">        slow.next = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        ListNode h1 = sortList(head);</span><br><span class="line">        ListNode h2 = sortList(secondHead);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> merge(h1, h2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用while来写merge函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">merge</span><span class="params">(ListNode h1, ListNode h2)</span> </span>&#123;</span><br><span class="line">        ListNode dummyhead = <span class="keyword">new</span> ListNode(<span class="number">0</span>), p = dummyhead;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(h1 != <span class="keyword">null</span> &amp;&amp; h2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h1.val &lt; h2.val)&#123;</span><br><span class="line">                p.next = h1;</span><br><span class="line">                h1 = h1.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                p.next = h2;</span><br><span class="line">                h2 = h2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            p = p.next; </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果上面的while结束后，h2那部分已经都比较完了，就把h1剩下的部分都贴到p的后面</span></span><br><span class="line">        <span class="keyword">if</span>(h1 != <span class="keyword">null</span>)</span><br><span class="line">            p.next = h1;</span><br><span class="line">        <span class="comment">//同理</span></span><br><span class="line">        <span class="keyword">if</span>(h2 != <span class="keyword">null</span>)</span><br><span class="line">            p.next = h2;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dummyhead.next; </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -483,7 +507,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DP/" rel="tag"># DP</a>
+            <a href="/tags/sort/" rel="tag"># sort</a>
+          
+            <a href="/tags/Divide-and-Conquer/" rel="tag"># Divide and Conquer</a>
           
         </div>
       
@@ -496,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/08/House-RobberI-II-III/" rel="next" title="House RobberI II III">
-                <i class="fa fa-chevron-left"></i> House RobberI II III
+              <a href="/2019/02/09/Rabin-Karp/" rel="next" title="Rabin Karp">
+                <i class="fa fa-chevron-left"></i> Rabin Karp
               </a>
             
           </div>
@@ -506,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/08/Backpack/" rel="prev" title="Backpack">
-                Backpack <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/09/Quick-Select/" rel="prev" title="Quick Select">
+                Quick Select <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -639,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-动态规划常见题型"><span class="nav-number">1.</span> <span class="nav-text">1.动态规划常见题型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-滚动数组"><span class="nav-number">2.</span> <span class="nav-text">2.滚动数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-循环数组的解决办法："><span class="nav-number">3.</span> <span class="nav-text">3.循环数组的解决办法：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Sort-从整体到局部"><span class="nav-number">1.</span> <span class="nav-text">Quick Sort 从整体到局部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Sort-从局部到整体"><span class="nav-number">2.</span> <span class="nav-text">Merge Sort 从局部到整体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compare"><span class="nav-number">3.</span> <span class="nav-text">Compare</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-Sort-List"><span class="nav-number">4.</span> <span class="nav-text">Example: Sort List</span></a></li></ol></div>
             
 
           </div>
