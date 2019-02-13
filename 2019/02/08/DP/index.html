@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="1.动态规划常见题型1.通常用于以下几种：最优解/max,min存不存在/yes,no多少个可行解 六大问题：1）坐标型 dp[i]表示从起点到坐标i2）序列行 dp[i]表示前i个元素3）背包型4）区间型5）划分型6）双序列行 2.滚动数组需要多少个状态，就new多少个。例如：如果某状态i只与i - 1有关，就new int[2] 123f[i] = max(f[i-1], f[i-2])f[i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-08T18:31:56.531Z">
+<meta property="og:updated_time" content="2019-02-12T00:37:04.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DP">
 <meta name="twitter:description" content="1.动态规划常见题型1.通常用于以下几种：最优解/max,min存不存在/yes,no多少个可行解 六大问题：1）坐标型 dp[i]表示从起点到坐标i2）序列行 dp[i]表示前i个元素3）背包型4）区间型5）划分型6）双序列行 2.滚动数组需要多少个状态，就new多少个。例如：如果某状态i只与i - 1有关，就new int[2] 123f[i] = max(f[i-1], f[i-2])f[i">
@@ -416,12 +416,24 @@
                 
               
 
-              <time title="Created: 2019-02-08 12:24:50 / Modified: 12:31:56" itemprop="dateCreated datePublished" datetime="2019-02-08T12:24:50-06:00">2019-02-08</time>
+              <time title="Created: 2019-02-08 12:24:50" itemprop="dateCreated datePublished" datetime="2019-02-08T12:24:50-06:00">2019-02-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-11 18:37:04" itemprop="dateModified" datetime="2019-02-11T18:37:04-06:00">2019-02-11</time>
               
             
           </span>
@@ -460,6 +472,7 @@
 <h3 id="2-滚动数组"><a href="#2-滚动数组" class="headerlink" title="2.滚动数组"></a>2.滚动数组</h3><p>需要多少个状态，就new多少个。<br>例如：如果某状态i只与i - 1有关，就new int[2]</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[i] = max(f[i-1], f[i-2])</span><br><span class="line"></span><br><span class="line">f[i] = max(f[(i-1) % 2], f[(i-2) % 2])</span><br></pre></td></tr></table></figure>
 <h3 id="3-循环数组的解决办法："><a href="#3-循环数组的解决办法：" class="headerlink" title="3.循环数组的解决办法："></a>3.循环数组的解决办法：</h3><p>a) 取反<br>b) 分裂<br>c) 倍增</p>
+<p>例题：<br><a href="House-RobberI-II-III.md">House Robber II</a></p>
 
       
     </div>
@@ -578,7 +591,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -603,7 +616,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
