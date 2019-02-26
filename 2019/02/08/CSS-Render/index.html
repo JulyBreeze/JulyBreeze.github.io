@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
+  <meta name="description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image. 1box-sizi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How CSS Render Website">
 <meta property="og:url" content="http://yoursite.com/2019/02/08/CSS-Render/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
+<meta property="og:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image. 1box-sizi">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-09T01:54:09.776Z">
+<meta property="og:updated_time" content="2019-02-26T01:48:56.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How CSS Render Website">
-<meta name="twitter:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
+<meta name="twitter:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image. 1box-sizi">
 
 
 
@@ -415,12 +415,24 @@
                 
               
 
-              <time title="Created: 2019-02-08 17:34:23 / Modified: 19:54:09" itemprop="dateCreated datePublished" datetime="2019-02-08T17:34:23-06:00">2019-02-08</time>
+              <time title="Created: 2019-02-08 17:34:23" itemprop="dateCreated datePublished" datetime="2019-02-08T17:34:23-06:00">2019-02-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-25 19:48:56" itemprop="dateModified" datetime="2019-02-25T19:48:56-06:00">2019-02-25</time>
               
             
           </span>
@@ -454,33 +466,43 @@
       
 
       
-        <h3 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h3><p>1.Box Model<br></p>
-<p>Padding is transparent inside of the box.<br>Margin is the space between boxes, it’s outside the box.<br>Fill area is the area that get filled with background color/image.  </p>
+        <h1 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h1><p>1.Box Model<br><br></p>
+<p>Padding is transparent inside of the box.<br><br>Margin is the space between boxes, it’s outside the box.<br><br>Fill area is the area that get filled with background color/image.</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: border-box/content-box(default)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>content-box<br>The width/height of box = set width + padding + border</li>
-<li>border-box<br>The padding and border are inclued in the box width/height. So the content width/height = box width/height - border - padding.<br>使用这个，就更方便的设置整个box的size</li>
+<li>content-box<br><br>The width/height of box = set width + padding + border</li>
+<li>border-box<br><br>The padding and border are inclued in the box width/height. So the content width/height = box width/height - border - padding.<br><br>使用这个，就更方便的设置整个box的size</li>
 </ul>
-<p>2.Three types of Box: Block-level, inline, inline-block<br>(All html element has display property.)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: block (default)/inline/inline-block</span><br></pre></td></tr></table></figure></p>
+<p>2.Three types of Box: Block-level, inline, inline-block<br><br>(All html element has display property.)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: block (default)/inline/inline-block</span><br></pre></td></tr></table></figure>
 <ul>
-<li>block-level<br>the block-box always occupies as much area as possible - 100% of its parent’s width</li>
-<li>inline<br>the inline-box only occupies the space that its content needs<br>no width/height property<br>padding and margin only are about left/right</li>
+<li>block-level<br><br>the block-box always occupies as much area as possible - 100% of its parent’s width</li>
+<li>inline<br><br>the inline-box only occupies the space that its content needs<br><br>no width/height property<br><br>padding and margin only are about left/right</li>
 </ul>
-<p>3.Position<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position: relative/absolute/fixed</span><br><span class="line">float: left/right</span><br></pre></td></tr></table></figure></p>
+<p>3.Position</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position: relative/absolute/fixed</span><br><span class="line">float: left/right</span><br></pre></td></tr></table></figure>
 <ul>
 <li>normal flow</li>
-<li>float<br>The element will float to leftmost/rightmost of its containing box</li>
-<li>absolute<br>和float不同的是，has no impact on surrounding content or element, may overlap them</li>
+<li>float<br><br>The element will float to leftmost/rightmost of its containing box</li>
+<li>absolute<br><br>和float不同的是，has no impact on surrounding content or element, may overlap them</li>
 </ul>
-<p>4.Stacking contexts<br>z-index, filter, opacity, etc. can creat stacking contexts</p>
-<p>5.Pseudo-classes<br>Add some special effect to selectors<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">selector : pseudo-class &#123;&#125;</span><br><span class="line">selector.class : pseudo-class &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.Stacking contexts<br><br>z-index, filter, opacity, etc. can creat stacking contexts</p>
+<p>5.Pseudo-classes<br><br>Add some special effect to selectors</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">selector : pseudo-class &#123;&#125;</span><br><span class="line">selector.class : pseudo-class &#123;&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Anchor Pseudo-classes<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">link</span> &#123;&#125;  <span class="selector-tag">unvisited</span> <span class="selector-tag">link</span></span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">visited</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">hover</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">active</span> &#123;&#125;  <span class="selector-tag">selected</span> <span class="selector-tag">link</span></span><br></pre></td></tr></table></figure>
+<li><p>Anchor Pseudo-classes</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">link</span> &#123;&#125;  <span class="selector-tag">unvisited</span> <span class="selector-tag">link</span></span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">visited</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">hover</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">active</span> &#123;&#125;  <span class="selector-tag">selected</span> <span class="selector-tag">link</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="CSS-Architecture"><a href="#CSS-Architecture" class="headerlink" title="CSS Architecture"></a>CSS Architecture</h3><p>1.How to name class<br>Many approaches to name the class to make the code maintainable and reuseable.<br>Block Element Modifier的命名规则:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element--modifier</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>block is the component that can be reuseable.<br>element is part of the block that can not reused outside of block.<br>modidifer is a different version of a block or element.</p>
-<p>2.Folders and files organization<br>Seven folders for partial Sass files; One main Sass file to import all other files into a compiled CSS stylesheet.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.base/</span><br><span class="line">.components/</span><br><span class="line">.layout/</span><br><span class="line">.pages/   styles for specific page</span><br><span class="line">.themes/</span><br><span class="line">.abstracts/ put code that doesn&apos;t output any CSS, such as variables</span><br><span class="line">.vendors/  put all third-party CSS</span><br></pre></td></tr></table></figure></p>
+<h1 id="CSS-Architecture"><a href="#CSS-Architecture" class="headerlink" title="CSS Architecture"></a>CSS Architecture</h1><p>1.How to name class<br><br>Many approaches to name the class to make the code maintainable and reuseable.<br><br>Block Element Modifier的命名规则:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element--modifier</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>block is the component that can be reuseable.<br><br>element is part of the block that can not reused outside of block.<br><br>modidifer is a different version of a block or element.</p>
+<p>2.Folders and files organization<br><br>Seven folders for partial Sass files; One main Sass file to import all other files into a compiled CSS stylesheet.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.base/</span><br><span class="line">.components/</span><br><span class="line">.layout/</span><br><span class="line">.pages/   styles for specific page</span><br><span class="line">.themes/</span><br><span class="line">.abstracts/ put code that doesn&apos;t output any CSS, such as variables</span><br><span class="line">.vendors/  put all third-party CSS</span><br></pre></td></tr></table></figure>
+<h1 id="Basic-responsive-design-principles"><a href="#Basic-responsive-design-principles" class="headerlink" title="Basic responsive design principles"></a>Basic responsive design principles</h1><p>1.Fluid grids and layouts<br><br>To allow content to easily adapt to the current viewport width used to browse the website. Uses % rather than px for all layout-related lengths.<br><br>2.Flexible/responsive images<br><br>Images behave differently than text content, and so we need to ensure that they also adapt nicely to the current viewport.<br><br>3.Media queries<br><br>To change styles on certain widths(breakpoints), allowing us to create different version of website for different widths.</p>
+<h1 id="Layout-types"><a href="#Layout-types" class="headerlink" title="Layout types"></a>Layout types</h1><p>1.Float Layouts<br><br>2.Flexbox<br><br>3.CSS Grid</p>
+<h1 id="Some-tips-using-vsc-extensions"><a href="#Some-tips-using-vsc-extensions" class="headerlink" title="Some tips using vsc extensions"></a>Some tips using vsc extensions</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.composition&gt;(img.composition__photo.composition__photo--p1)*3  </span><br><span class="line"> then click TAB</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"composition"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"composition__photo composition__photo--p1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"composition__photo composition__photo--p1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"composition__photo composition__photo--p1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -593,7 +615,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -624,7 +646,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -660,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Knowledge"><span class="nav-number">1.</span> <span class="nav-text">Basic Knowledge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-Architecture"><span class="nav-number">2.</span> <span class="nav-text">CSS Architecture</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Knowledge"><span class="nav-number">1.</span> <span class="nav-text">Basic Knowledge</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Architecture"><span class="nav-number">2.</span> <span class="nav-text">CSS Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-responsive-design-principles"><span class="nav-number">3.</span> <span class="nav-text">Basic responsive design principles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Layout-types"><span class="nav-number">4.</span> <span class="nav-text">Layout types</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-tips-using-vsc-extensions"><span class="nav-number">5.</span> <span class="nav-text">Some tips using vsc extensions</span></a></li></ol></div>
             
 
           </div>
