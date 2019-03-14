@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaScri作用域]]></title>
+    <url>%2F2019%2F03%2F14%2FJavaScri%E4%BD%9C%E7%94%A8%E5%9F%9F%2F</url>
+    <content type="text"><![CDATA[Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}cannot access variables in a child scope.can access values defined in itself or any parent/ancestor scope ShadowingOccurs when a local variable shadows over a global variabe and take precedent. Leaked GlobalWhen shadowing, js will all the way up to the global scope to find a variable’s value.If don’t find it in the global scope, js will create it as a global variable, which means a variable in the local scope leaks into global scope. 12345678let getScore = function () &#123; if (1 &lt; 2) &#123; score = 3 &#125; console.log(score)&#125;getScore()console.log(score) // Prints 3 在一个作用域里，js解析分两步: 预解析在代码真正运行前，所有变量和函数，此时都是undefined;遇到重名，只留下一个；变量和函数重名，只留下函数。 逐行解析(开始解析每句code) 函数内部也是一个作用域，所以也会进行预解析和逐行解析，且函数中局部优先(Shadowing)。 Examples1.12345678var a = 1;function fn()&#123; alert(a); //output 1 a = 2;&#125;fn();alert(a); //output 2 12345678预解析： var a; fn = function()&#123;...&#125;逐行解析： a = 1 fn()调用 预解析： none 逐行解析：alert(a) //1 a = 2 alert(a) //2 2.12345678var a = 1;function fn()&#123; alert(a); //output undefined var a = 2;&#125;fn();alert(a); //output 1 12345678预解析： var a; fn = function()&#123;...&#125;逐行解析： a = 1 fn()调用 预解析： var _a 逐行解析：alert(_a) //undefined _a = 2 alert(a) 3.12345678var a = 1;function fn(a)&#123; alert(a); //output undefined a = 2;&#125;fn();alert(a); //output 1 12345678预解析： var a; fn = function()&#123;...&#125;逐行解析： a = 1 fn()调用 预解析： var _a (函数传入的参数是local variable) 逐行解析：alert(_a) //undefined _a = 2 alert(a) 4.函数名和变量名相同时1234567891011121. alert(a); 2. var a = 1;3. function a() &#123;4. alert("1.function a");5. &#125;6. alert(a); 7. var a = 3;8. alert(a); 9. function a()&#123;10. alert("2.function a");11.&#125;12. alert(a); 1234567891011121314预解析： 第2行：var a 第3行：a = function()&#123;alert(&quot;1.function a&quot;)&#125; 第7行：var a 第9行：a = function()&#123;alert(&quot;2.function a&quot;)&#125; //变量和函数同名时，只留函数逐行解析： 第1行：alert(a) //output 整个function()&#123;alert(&quot;1.function a&quot;)&#125; 第2行：a = 1 第6行：alert(a) //output is 1 第7行：a = 3 第8行：alert(a) // output is 3 第12行：alert(a) //output is 3]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Socket]]></title>
     <url>%2F2019%2F02%2F25%2FSocket%2F</url>
     <content type="text"><![CDATA[1.TCP and UDP2.Socket IO1npm install socket.io --save 3.Web Socketsweb socket is part of javascript inside the browser]]></content>
