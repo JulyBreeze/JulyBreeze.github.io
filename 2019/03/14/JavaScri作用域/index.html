@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}cannot access variables in a child scope.can access values defined in">
+  <meta name="description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}The parent scope cannot access variables in the child scope.Child sco">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScrit Scope">
+<meta property="og:title" content="2.JavaScrit Scope">
 <meta property="og:url" content="http://yoursite.com/2019/03/14/JavaScri作用域/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}cannot access variables in a child scope.can access values defined in">
+<meta property="og:description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}The parent scope cannot access variables in the child scope.Child sco">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-18T17:32:35.572Z">
+<meta property="og:updated_time" content="2019-03-19T14:02:01.522Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScrit Scope">
-<meta name="twitter:description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}cannot access variables in a child scope.can access values defined in">
+<meta name="twitter:title" content="2.JavaScrit Scope">
+<meta name="twitter:description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}The parent scope cannot access variables in the child scope.Child sco">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>JavaScrit Scope | Secret Garden</title>
+  <title>2.JavaScrit Scope | Secret Garden</title>
   
 
 
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScrit Scope
+          <h1 class="post-title" itemprop="name headline">2.JavaScrit Scope
 
               
             
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-18 12:32:35" itemprop="dateModified" datetime="2019-03-18T12:32:35-05:00">2019-03-18</time>
+                <time title="Modified: 2019-03-19 09:02:01" itemprop="dateModified" datetime="2019-03-19T09:02:01-05:00">2019-03-19</time>
               
             
           </span>
@@ -469,12 +469,13 @@
       
         <h3 id="Scope-Static-Scoping"><a href="#Scope-Static-Scoping" class="headerlink" title="Scope (Static Scoping)"></a>Scope (Static Scoping)</h3><ul>
 <li>Global Scope<br>contains variable defined out of any code block</li>
-<li><p>Local Scope<br>local scope created by a code block{}<br>cannot access variables in a child scope.<br>can access values defined in itself or any parent/ancestor scope</p>
+<li><p>Local Scope<br>local scope created by a code block{}<br>The parent scope cannot access variables in the child scope.<br>Child scope can access values defined in itself or any parent/ancestor scope</p>
 </li>
 <li><p>Shadowing<br>Occurs when a local variable shadows over a global variabe and take precedent.  </p>
 </li>
-<li>Leaked Global<br>When shadowing, js will all the way up to the global scope to find a variable’s value.<br>If don’t find it in the global scope, js will create it as a global variable, which means a variable in the local scope leaks into global scope.</li>
+<li>Leaked Global<br>When shadowing, js will go all the way up to the global scope to find a variable’s value.<br>If don’t find it in the global scope, js will create it as a global variable, which means a variable in the local scope leaks into global scope.</li>
 </ul>
+<p>总结：<br>父对象的所有变量对子对象都是可见，反之则不成立。<br>(chain scope: 子对象会一级一级地向上寻找所有父对象的变量) </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> getScore = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="number">1</span> &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    score = <span class="number">3</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(score)</span><br><span class="line">&#125;</span><br><span class="line">getScore()</span><br><span class="line"><span class="built_in">console</span>.log(score) <span class="comment">// Prints 3</span></span><br></pre></td></tr></table></figure>
 <p>在一个作用域里，js解析分两步:</p>
 <ul>
@@ -535,8 +536,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/14/JavaScript/" rel="prev" title="JavaScript">
-                JavaScript <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/14/JavaScript/" rel="prev" title="1.JavaScript">
+                1.JavaScript <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,7 +608,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
