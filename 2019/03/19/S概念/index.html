@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="Closurehttps://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures 闭包就是能够读取其它函数内部变量的函数，本质上，闭包是将函数内部和外部连接的桥梁。最大用处：一个是在外部可以读取函数内部的变量，另一个是让这些变量的值始终保持在内存中。 但是不能滥用，因为闭包会使函数的变量都保存在内存中。例1： 1234567891011">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-13T18:34:08.596Z">
+<meta property="og:updated_time" content="2019-04-18T02:04:23.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1.JS 重点概念">
 <meta name="twitter:description" content="Closurehttps://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures 闭包就是能够读取其它函数内部变量的函数，本质上，闭包是将函数内部和外部连接的桥梁。最大用处：一个是在外部可以读取函数内部的变量，另一个是让这些变量的值始终保持在内存中。 但是不能滥用，因为闭包会使函数的变量都保存在内存中。例1： 1234567891011">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-13 13:34:08" itemprop="dateModified" datetime="2019-04-13T13:34:08-05:00">2019-04-13</time>
+                <time title="Modified: 2019-04-17 21:04:23" itemprop="dateModified" datetime="2019-04-17T21:04:23-05:00">2019-04-17</time>
               
             
           </span>
@@ -478,6 +478,7 @@
 <p><strong>闭包是由函数以及创建该函数的词法环境组合而成。这个环境包含了这个闭包创建时所能访问的所有局部变量</strong></p>
 <h3 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h3><p>js中OOP是基于构造函数constructor和原型链prototype chain的。  </p>
 <h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><p>Every JavaScript object has a prototype object (or null, but this is rare) associated with it. The object inherits properties from the prototype. <strong>每个JS object对应一个原型对象prototype，并从prototype继承属性和方法。</strong></p>
+<p>可以这样理解：prototype就是让所有的对象实例可以共享其所包含的属性和方法</p>
 <p>每个object具有私有属性<strong>proto</strong>，该属性指向该object对应的prototype。该prototype也有一个自己的原型对象，层层向上直到一个object的prototype为null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">x</span> : <span class="number">1</span>&#125;</span><br><span class="line">obj1.__proto__ === <span class="built_in">Object</span>.prototype; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <h4 id="I-原型链prototype-chain"><a href="#I-原型链prototype-chain" class="headerlink" title="I.原型链prototype chain"></a>I.原型链prototype chain</h4><p>Js object有一个指向一个prototype的链。当试图访问一个object的属性时，它不仅仅在该object上搜寻，还会搜寻该object的prototype，以及该object的prototype的prototype，依次层层向上搜索，直到找到一个名字匹配的属性或到达prototype chain的末尾。</p>
@@ -648,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

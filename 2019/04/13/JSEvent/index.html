@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="基本概念事件对象当event发生时，会产生event object. Event object的作用是记录事件发生的相关信息。事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。 1234567891011121314var obj = document.getElementById(&apos;box&apos;);obj.onclick = functi">
+  <meta name="description" content="基本概念Js与HTML交互是通过event实现的。 事件对象当触发DOM上的某个event时，会产生一个event object. Event object记录事件发生的相关信息，包括导致事件的元素，事件的类型等。事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。 1234567891011121314var obj = documen">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="6.Js Event">
 <meta property="og:url" content="http://yoursite.com/2019/04/13/JSEvent/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="基本概念事件对象当event发生时，会产生event object. Event object的作用是记录事件发生的相关信息。事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。 1234567891011121314var obj = document.getElementById(&apos;box&apos;);obj.onclick = functi">
+<meta property="og:description" content="基本概念Js与HTML交互是通过event实现的。 事件对象当触发DOM上的某个event时，会产生一个event object. Event object记录事件发生的相关信息，包括导致事件的元素，事件的类型等。事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。 1234567891011121314var obj = documen">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-13T17:37:35.973Z">
+<meta property="og:updated_time" content="2019-04-18T02:57:28.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6.Js Event">
-<meta name="twitter:description" content="基本概念事件对象当event发生时，会产生event object. Event object的作用是记录事件发生的相关信息。事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。 1234567891011121314var obj = document.getElementById(&apos;box&apos;);obj.onclick = functi">
+<meta name="twitter:description" content="基本概念Js与HTML交互是通过event实现的。 事件对象当触发DOM上的某个event时，会产生一个event object. Event object记录事件发生的相关信息，包括导致事件的元素，事件的类型等。事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。 1234567891011121314var obj = documen">
 
 
 
@@ -416,12 +416,24 @@
                 
               
 
-              <time title="Created: 2019-04-13 12:37:21 / Modified: 12:37:35" itemprop="dateCreated datePublished" datetime="2019-04-13T12:37:21-05:00">2019-04-13</time>
+              <time title="Created: 2019-04-13 12:37:21" itemprop="dateCreated datePublished" datetime="2019-04-13T12:37:21-05:00">2019-04-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-17 21:57:28" itemprop="dateModified" datetime="2019-04-17T21:57:28-05:00">2019-04-17</time>
               
             
           </span>
@@ -455,7 +467,8 @@
       
 
       
-        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><p>当event发生时，会产生event object. Event object的作用是记录事件发生的相关信息。事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。</p>
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>Js与HTML交互是通过event实现的。</p>
+<h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><p>当触发DOM上的某个event时，会产生一个event object. Event object记录事件发生的相关信息，包括导致事件的元素，事件的类型等。<br>事件对象只有在事件发生时才会产生，无法手动创建。事件对象只能在处理函数内部访问，处理函数结束后该对象会自动销毁。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line">obj.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//不同的浏览器兼容，ev是事件对象</span></span><br><span class="line">  ev = <span class="built_in">window</span>.event | ev;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  event的属性</span></span><br><span class="line"><span class="comment">  IE：srcElement</span></span><br><span class="line"><span class="comment">  google,safari: srcElement/target</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="comment">//事件源</span></span><br><span class="line">  <span class="keyword">var</span> self = ev.target || ev.srcElement;</span><br><span class="line">  <span class="comment">//self.id 事件源的名称</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一些event属性：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//鼠标相对于浏览器页面位置</span></span><br><span class="line">ev.clicentX</span><br><span class="line">ev.clientY</span><br><span class="line"></span><br><span class="line"><span class="comment">//鼠标相对于事件源的位置</span></span><br><span class="line">ev.offsetX</span><br><span class="line">ev.offsetY</span><br></pre></td></tr></table></figure>
@@ -525,6 +538,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/04/17/JSbasics/" rel="prev" title="JS basics">
+                JS basics <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -593,7 +610,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
