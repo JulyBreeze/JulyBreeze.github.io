@@ -104,10 +104,12 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="Closurehttps://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures 闭包就是能够读取其它函数内部变量的函数，本质上，闭包是将函数内部和外部连接的桥梁。最大用处：一个是在外部可以读取函数内部的变量，另一个是让这些变量的值始终保持在内存中。 但是不能滥用，因为闭包会使函数的变量都保存在内存中。例1： 1234567891011">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-18T02:04:23.169Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/19/S概念/fig.png">
+<meta property="og:updated_time" content="2019-04-18T19:49:20.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1.JS 重点概念">
 <meta name="twitter:description" content="Closurehttps://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures 闭包就是能够读取其它函数内部变量的函数，本质上，闭包是将函数内部和外部连接的桥梁。最大用处：一个是在外部可以读取函数内部的变量，另一个是让这些变量的值始终保持在内存中。 但是不能滥用，因为闭包会使函数的变量都保存在内存中。例1： 1234567891011">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/19/S概念/fig.png">
 
 
 
@@ -433,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-17 21:04:23" itemprop="dateModified" datetime="2019-04-17T21:04:23-05:00">2019-04-17</time>
+                <time title="Modified: 2019-04-18 14:49:20" itemprop="dateModified" datetime="2019-04-18T14:49:20-05:00">2019-04-18</time>
               
             
           </span>
@@ -481,8 +483,12 @@
 <p>可以这样理解：prototype就是让所有的对象实例可以共享其所包含的属性和方法</p>
 <p>每个object具有私有属性<strong>proto</strong>，该属性指向该object对应的prototype。该prototype也有一个自己的原型对象，层层向上直到一个object的prototype为null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">x</span> : <span class="number">1</span>&#125;</span><br><span class="line">obj1.__proto__ === <span class="built_in">Object</span>.prototype; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h4 id="I-原型链prototype-chain"><a href="#I-原型链prototype-chain" class="headerlink" title="I.原型链prototype chain"></a>I.原型链prototype chain</h4><p>Js object有一个指向一个prototype的链。当试图访问一个object的属性时，它不仅仅在该object上搜寻，还会搜寻该object的prototype，以及该object的prototype的prototype，依次层层向上搜索，直到找到一个名字匹配的属性或到达prototype chain的末尾。</p>
+<h4 id="I-原型链prototype-chain"><a href="#I-原型链prototype-chain" class="headerlink" title="I.原型链prototype chain"></a>I.原型链prototype chain</h4><p>原型链是实现继承的主要方法。  </p>
+<p>Js object有一个指向一个prototype的链。当试图访问一个object的属性时，它不仅仅在该object上搜寻，还会搜寻该object的prototype，以及该object的prototype的prototype，依次层层向上搜索，直到找到一个名字匹配的属性或到达prototype chain的末尾。</p>
 <p>几乎所有的JS object都是位于原型链顶端的Object的instance。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ParentType</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.property = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ParentType.prototype.getParentValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.property;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//子构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ChildType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.child_property = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承</span></span><br><span class="line">ChildType.prototype = <span class="keyword">new</span> ParentType();</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承后又添加了新方法</span></span><br><span class="line">ChildType.prototype.getChildValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.child_property;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> ChildType();</span><br><span class="line">alert(instance.getParentValue()); <span class="comment">//true;</span></span><br></pre></td></tr></table></figure>
+<p>解释：定义了两个类型ParentType和ChildType，每个类型有一个属性和方法。<br>继承是通过创建ParentType的实例，并将实例赋值给ChildType.prototype实现的。实现的本质是重写原型对象，代之以一个新类型的实例。即原来存在于ParentType的实例中的属性和方法，现在也存在于ChildType.prototype中。</p>
+<img src="/2019/03/19/S概念/fig.png">
 <h4 id="II-构造函数"><a href="#II-构造函数" class="headerlink" title="II.构造函数"></a>II.构造函数</h4><h5 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h5><p>规则：  </p>
 <ul>
 <li>constructor的name的第一个字母通常大写。</li>
