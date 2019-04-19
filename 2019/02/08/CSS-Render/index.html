@@ -105,7 +105,7 @@
 <meta property="og:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/02/08/CSS-Render/box.png">
-<meta property="og:updated_time" content="2019-02-26T02:05:51.101Z">
+<meta property="og:updated_time" content="2019-04-18T21:56:22.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How CSS Render Website">
 <meta name="twitter:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-25 20:05:51" itemprop="dateModified" datetime="2019-02-25T20:05:51-06:00">2019-02-25</time>
+                <time title="Modified: 2019-04-18 16:56:22" itemprop="dateModified" datetime="2019-04-18T16:56:22-05:00">2019-04-18</time>
               
             
           </span>
@@ -491,16 +491,26 @@
 <p>Padding is transparent inside of the box.<br>Margin is the space between boxes, it’s outside the box.<br>Fill area is the area that get filled with background color/image.  </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: border-box/content-box(default)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>content-box<br>The width/height of box = set width + padding + border</li>
-<li>border-box<br>The padding and border are inclued in the box width/height. So the content width/height = box width/height - border - padding.<br>使用这个，就更方便的设置整个box的size</li>
+<li>content-box<br>width/height代表的是content，所以box的宽高 = content的宽高 + padding和border<br>The width/height of box = set width/height + padding + border</li>
+<li>border-box<br>width/height代表的是box<br>The padding and border are inclued in the box width/height. So the content width/height = box width/height - border - padding.<br>使用这个，就更方便的设置整个box的size</li>
 </ul>
-<p>2.Three types of Box<br>Block-level, inline, inline-block<br>(All html element has display property)</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: block (default)/inline/inline-block</span><br></pre></td></tr></table></figure>
+<p>2.Main three types of Box<br>Block-level, inline, inline-block<br>(All html element has display property)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline</span>(<span class="selector-tag">default</span>), <span class="selector-tag">block</span>, <span class="selector-tag">inline-block</span>, <span class="selector-tag">content</span>, <span class="selector-tag">table</span>...</span><br></pre></td></tr></table></figure>
 <ul>
-<li>block-level<br>the block-box always occupies as much area as possible - 100% of its parent’s width</li>
+<li>block块级元素<br>the block-box always occupies 100% of its parent’s width</li>
 <li>inline<br>the inline-box only occupies the space that its content needs<br>no width/height property<br>padding and margin only are about left/right</li>
+<li>inline-blcok<br>与inline相同，但是这个有width/height属性</li>
+<li>content<br>the container disappear, making the child elements children of the element the next level up in the DOM</li>
 </ul>
-<p>3.Position<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position: relative/absolute/fixed</span><br><span class="line">float: left/right</span><br></pre></td></tr></table></figure></p>
+<p>3.Position</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: static(default)/relative/absolute/fixed</span><br></pre></td></tr></table></figure>
+<ul>
+<li>relative: the element is positioned relative to its normal position.</li>
+<li>absolute: the element is positioned relative to its first positioned(not static) ancestor element</li>
+<li>fixed : the element is positioned relative to the browser window</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float: none(default)/left/right</span><br></pre></td></tr></table></figure>
+<p>使用absolute的元素无需考虑float.</p>
 <ul>
 <li>normal flow</li>
 <li>float<br>The element will float to leftmost/rightmost of its containing box</li>
@@ -509,11 +519,8 @@
 <p>4.Stacking contexts<br>z-index, filter, opacity, etc. can creat stacking contexts</p>
 <p>5.Pseudo-classes<br>Add some special effect to selectors</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">selector : pseudo-class &#123;&#125;</span><br><span class="line">selector.class : pseudo-class &#123;&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Anchor Pseudo-classes</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">link</span> &#123;&#125;  <span class="selector-tag">unvisited</span> <span class="selector-tag">link</span></span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">visited</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">hover</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">active</span> &#123;&#125;  <span class="selector-tag">selected</span> <span class="selector-tag">link</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>Anchor &lt; a &gt; Pseudo-classes:</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">link</span> &#123;&#125;  <span class="selector-tag">unvisited</span> <span class="selector-tag">link</span></span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">visited</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">hover</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">active</span> &#123;&#125;  <span class="selector-tag">selected</span> <span class="selector-tag">link</span></span><br></pre></td></tr></table></figure>
 <h1 id="CSS-Architecture"><a href="#CSS-Architecture" class="headerlink" title="CSS Architecture"></a>CSS Architecture</h1><p>1.How to name class<br>Many approaches to name the class to make the code maintainable and reuseable.<br>Block Element Modifier的命名规则:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element--modifier</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>block is the component that can be reuseable.  </li>
@@ -652,7 +659,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -704,7 +711,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
