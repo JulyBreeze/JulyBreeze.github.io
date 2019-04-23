@@ -96,27 +96,29 @@
 
 
 
-  <meta name="description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
-<meta name="keywords" content="CSS">
+  <meta name="description" content="1.overriding &amp;amp; overloading(achieve Polymorphism)   overridingIn oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its super classe">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How CSS Render Website">
-<meta property="og:url" content="http://yoursite.com/2019/02/08/CSS-Render/index.html">
+<meta property="og:title" content="Java basics">
+<meta property="og:url" content="http://yoursite.com/2019/04/22/java/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
+<meta property="og:description" content="1.overriding &amp;amp; overloading(achieve Polymorphism)   overridingIn oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its super classe">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/02/08/CSS-Render/box.png">
-<meta property="og:updated_time" content="2019-04-18T21:56:22.758Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/java/AccessModifier.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/java/relation.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/java/hierarchy.png">
+<meta property="og:updated_time" content="2019-04-23T02:18:38.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How CSS Render Website">
-<meta name="twitter:description" content="Basic Knowledge1.Box Model Padding is transparent inside of the box.Margin is the space between boxes, it’s outside the box.Fill area is the area that get filled with background color/image.   1box-si">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/08/CSS-Render/box.png">
+<meta name="twitter:title" content="Java basics">
+<meta name="twitter:description" content="1.overriding &amp;amp; overloading(achieve Polymorphism)   overridingIn oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its super classe">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/22/java/AccessModifier.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/08/CSS-Render/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/22/java/">
 
 
 
@@ -126,7 +128,7 @@
   };
 </script>
 
-  <title>How CSS Render Website | Secret Garden</title>
+  <title>Java basics | Secret Garden</title>
   
 
 
@@ -375,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/CSS-Render/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/java/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Annie Hu">
@@ -392,7 +394,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">How CSS Render Website
+          <h1 class="post-title" itemprop="name headline">Java basics
 
               
             
@@ -418,46 +420,16 @@
                 
               
 
-              <time title="Created: 2019-02-08 17:34:23" itemprop="dateCreated datePublished" datetime="2019-02-08T17:34:23-06:00">2019-02-08</time>
+              <time title="Created: 2019-04-22 19:03:16 / Modified: 21:18:38" itemprop="dateCreated datePublished" datetime="2019-04-22T19:03:16-05:00">2019-04-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-18 16:56:22" itemprop="dateModified" datetime="2019-04-18T16:56:22-05:00">2019-04-18</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -487,60 +459,73 @@
       
 
       
-        <h1 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h1><p>1.Box Model<br><img src="/2019/02/08/CSS-Render/box.png" title="BOX"></p>
-<p>Padding is transparent inside of the box.<br>Margin is the space between boxes, it’s outside the box.<br>Fill area is the area that get filled with background color/image.  </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: border-box/content-box(default)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>content-box<br>width/height代表的是content，所以box的宽高 = content的宽高 + padding和border<br>The width/height of box = set width/height + padding + border</li>
-<li>border-box<br>width/height代表的是box<br>The padding and border are inclued in the box width/height. So the content width/height = box width/height - border - padding.<br>使用这个，就更方便的设置整个box的size</li>
+        <h3 id="1-overriding-amp-overloading"><a href="#1-overriding-amp-overloading" class="headerlink" title="1.overriding &amp; overloading"></a>1.overriding &amp; overloading</h3><p>(achieve Polymorphism)  </p>
+<h4 id="overriding"><a href="#overriding" class="headerlink" title="overriding"></a>overriding</h4><p>In oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its super classes. </p>
+<h4 id="overloading"><a href="#overloading" class="headerlink" title="overloading"></a>overloading</h4><p>Allow different methods to have the same name, but different signatures differing on the number or type of the input parameters. Overloading cannot distinguish two same signatures with different return type.<br>Therefore, the return type can be same or different. Just make sure the number or type of input parameters are different.</p>
+<h3 id="static-amp-final"><a href="#static-amp-final" class="headerlink" title="static &amp; final"></a>static &amp; final</h3><h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><p>variable, method, class<br>static variable and method are on the class level which is shared with the objects.</p>
+<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><ul>
+<li>variable: cannot change the value of final variable</li>
+<li>method: cannot override final method, final method is inherited</li>
+<li>class: cannot extend final class</li>
 </ul>
-<p>2.Main three types of Box<br>Block-level, inline, inline-block<br>(All html element has display property)</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline</span>(<span class="selector-tag">default</span>), <span class="selector-tag">block</span>, <span class="selector-tag">inline-block</span>, <span class="selector-tag">content</span>, <span class="selector-tag">table</span>...</span><br></pre></td></tr></table></figure>
+<p>1)blank final varialbe:<br>A final variable that is not initialized at the time of declaration. It can be initialized only in constructor</p>
+<p>2)static blank final variable:<br>static final variable that is not initialized at the time of declaration. It can be initialized only in static block.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num; </span><br><span class="line"><span class="keyword">static</span>&#123; num = <span class="number">10</span>; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Access-modifier"><a href="#Access-modifier" class="headerlink" title="Access modifier"></a>Access modifier</h3><p>restrict the scope of class, method, variable.<br>4 types: default(no keyword), private, protected, public.</p>
+<img src="/2019/04/22/java/AccessModifier.png" title="access_modifer">
+<h3 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h3><p>(achieve polymorphism)</p>
 <ul>
-<li>block块级元素<br>the block-box always occupies 100% of its parent’s width</li>
-<li>inline<br>the inline-box only occupies the space that its content needs<br>no width/height property<br>padding and margin only are about left/right</li>
-<li>inline-blcok<br>与inline相同，但是这个有width/height属性</li>
-<li>content<br>the container disappear, making the child elements children of the element the next level up in the DOM</li>
+<li>only contain method signatures and fields, cannot contain the implementation of the methods.</li>
+<li>public or default access modifier.</li>
+<li>class that implements an interface must implement all the methods declared in the interface. Doesn’t need to<br>declare the variables of the interface. Only the methods.</li>
+<li>a class can implement multiple interfaces</li>
+<li>interface cannot be instantiated</li>
+<li>interface can inhert another interface</li>
 </ul>
-<p>3.Position</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: static(default)/relative/absolute/fixed</span><br></pre></td></tr></table></figure>
+<p>Those types can implement Interface:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class</span><br><span class="line">abstract class</span><br><span class="line">nested class</span><br><span class="line">Enum</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">changeGear</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">applyBrakes</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bicycle</span> <span class="keyword">implements</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> speed, gear;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeGear</span><span class="params">(<span class="keyword">int</span> newGear)</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyBrakes</span><span class="params">(<span class="keyword">int</span> decrement)</span></span>&#123;</span><br><span class="line">    speed -= decrement;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>once a class implements an java interface, can reference an instance of that class as an instance of that interface:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vehicle veh = <span class="keyword">new</span> Bicycle();</span><br><span class="line">veh.changeGear(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="Generic-Interface"><a href="#Generic-Interface" class="headerlink" title="Generic Interface"></a>Generic Interface</h4><p>generic interface can be typed - it can be specialized to work with a specific type when used.</p>
+<p>Eg:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> interface <span class="title">MyProducer</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">produce</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarProducer</span> <span class="keyword">implements</span> <span class="title">MyProducer</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">produce</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Car();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyProduce car_producer = <span class="keyword">new</span> CarProducer();</span><br><span class="line">Car car = (Car) car_producer.produce();</span><br></pre></td></tr></table></figure></p>
+<p>But use Generic, no need to cast the object returned from ‘produce() method’:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyProducer</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> T <span class="title">produce</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarProducer</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">MyProducer</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> T <span class="title">produce</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (T) <span class="keyword">new</span> Car();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyProducer&lt;Car&gt; car_producer = <span class="keyword">new</span> CarProducer&lt;Car&gt;();</span><br><span class="line">Car car = car_producer.produce();</span><br><span class="line"></span><br><span class="line">MyProducer&lt;String&gt; car_producer_str = <span class="keyword">new</span> CarProducer&lt;String&gt;();</span><br><span class="line">String car_str = car_producer_str.produce();</span><br></pre></td></tr></table></figure>
+<p>can lock down the generic type of the MyProducer interface when implementing it:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarProducer</span> <span class="keyword">implements</span> <span class="title">MyProducer</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Car <span class="title">produce</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Car();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>abtract class is similar to interface except that it can contain method implementation.<br>It provides common mehtod implementation to all the subclasses or to provide default implementation.</p>
 <ul>
-<li>relative: the element is positioned relative to its normal position.</li>
-<li>absolute: the element is positioned relative to its first positioned(not static) ancestor element</li>
-<li>fixed : the element is positioned relative to the browser window</li>
+<li>abstract class cannot be instantiated</li>
+<li>abstract method doesn’t have a body</li>
+<li>if a class has abstract methods, then the class is abstract class using ‘abstract’ keyword</li>
+<li>abstract class can have no abstract methods</li>
+<li>subclass of abstract class must implement all the abstract methods unless the subclass is also an abstract class.</li>
+<li>abstract class can implement interfaces without providing implementation of interface methods.</li>
+<li>abstract class can have constructor </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float: none(default)/left/right</span><br></pre></td></tr></table></figure>
-<p>使用absolute的元素无需考虑float.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> String name, gender;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, gender)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//abstract method has no body</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeName</span><span class="params">(String newName)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = newName;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(String name, String gender, <span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(name, gender);</span><br><span class="line">    <span class="keyword">this</span>.id = id;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(id == <span class="number">0</span>) ...</span><br><span class="line">    <span class="keyword">else</span> ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">  Person student = <span class="keyword">new</span> Employee(<span class="string">"John"</span>, <span class="string">"Male"</span>, <span class="number">0</span>);</span><br><span class="line">  student.work();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Four-Pillars"><a href="#Four-Pillars" class="headerlink" title="Four Pillars"></a>Four Pillars</h3><ul>
+<li>Encapsulation<br>data hiding, wrap variable and methods in a single unit.</li>
+<li>Polymorphism<br>method overriding and overloading</li>
+<li>Abstraction<br>detail hiding, only show the relevant details, reduce complexity.<br>achieved by interface and abstract classes.</li>
+<li>Inheritance</li>
+</ul>
+<p>class cannot inherit multiple classes</p>
+<h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><p>ava virtual machine is a run-time engine to run Java applications, it is a interpreter by executing java code.</p>
+<p>1) diff between JDK, JRE, JVM<br><img src="/2019/04/22/java/relation.jpg" title="relation"></p>
+<p>2) heap space and stack memory<br>Java heap stores objects and classes;<br>Java stack memory is used for execution of a thread. It contains references to the objects in the heap.  </p>
 <ul>
-<li>normal flow</li>
-<li>float<br>The element will float to leftmost/rightmost of its containing box</li>
-<li>absolute<br>和float不同的是，has no impact on surrounding content or element, may overlap them</li>
+<li>Objects stored in heap are globally accessible; stack memory can’t be accessed by other threads.</li>
+<li>heap memory lives during the application execution; Stack memory is short-lived.</li>
+<li>Stack memory size is less than to Heap memory, but faster</li>
 </ul>
-<p>4.Stacking contexts<br>z-index, filter, opacity, etc. can creat stacking contexts</p>
-<p>5.Pseudo-classes<br>Add some special effect to selectors</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">selector : pseudo-class &#123;&#125;</span><br><span class="line">selector.class : pseudo-class &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>Anchor &lt; a &gt; Pseudo-classes:</p>
-  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">link</span> &#123;&#125;  <span class="selector-tag">unvisited</span> <span class="selector-tag">link</span></span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">visited</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">hover</span> &#123;&#125;</span><br><span class="line"><span class="selector-tag">a</span>: <span class="selector-tag">active</span> &#123;&#125;  <span class="selector-tag">selected</span> <span class="selector-tag">link</span></span><br></pre></td></tr></table></figure>
-<h1 id="CSS-Architecture"><a href="#CSS-Architecture" class="headerlink" title="CSS Architecture"></a>CSS Architecture</h1><p>1.How to name class<br>Many approaches to name the class to make the code maintainable and reuseable.<br>Block Element Modifier的命名规则:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element--modifier</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>block is the component that can be reuseable.  </li>
-<li>element is part of the block that can not reused outside of block.  </li>
-<li>modidifer is a different version of a block or element.</li>
-</ul>
-<p>2.Folders and files organization<br>Seven folders for partial Sass files; One main Sass file to import all other files into a compiled CSS stylesheet.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.base/</span><br><span class="line">.components/</span><br><span class="line">.layout/</span><br><span class="line">.pages/   styles for specific page</span><br><span class="line">.themes/</span><br><span class="line">.abstracts/ put code that doesn&apos;t output any CSS, such as variables</span><br><span class="line">.vendors/  put all third-party CSS</span><br></pre></td></tr></table></figure>
-<h1 id="Basic-responsive-design-principles"><a href="#Basic-responsive-design-principles" class="headerlink" title="Basic responsive design principles"></a>Basic responsive design principles</h1><ol>
-<li>Fluid grids and layouts<br>To allow content to easily adapt to the current viewport width used to browse the website. Uses % rather than px for all layout-related lengths.  </li>
-<li>Flexible/responsive images<br>Images behave differently than text content, and so we need to ensure that they also adapt nicely to the current viewport.  </li>
-<li>Media queries<br>To change styles on certain widths(breakpoints), allowing us to create different version of website for different widths.</li>
-</ol>
-<h1 id="Layout-types"><a href="#Layout-types" class="headerlink" title="Layout types"></a>Layout types</h1><ol>
-<li>Float Layouts  </li>
-<li>Flexbox  </li>
-<li>CSS Grid</li>
-</ol>
-<h1 id="Some-tips-using-vsc-extensions"><a href="#Some-tips-using-vsc-extensions" class="headerlink" title="Some tips using vsc extensions"></a>Some tips using vsc extensions</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.composition&gt;(img.composition__photo.composition__photo--p1)*3  </span><br><span class="line"> then click TAB</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"composition"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"composition__photo composition__photo--p1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"composition__photo composition__photo--p1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"composition__photo composition__photo--p1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3) Garbage Collection<br>Runs on the heap memory to free the memory used by objects that doesn’t have reference.</p>
+<p>JVM heap memory is divided into two parts - Young generation and old generation.</p>
+<p>When the young generation is filled, garbage collection is performed called Minor GC. Old Generation memory contains the objects that are long-lived and survived after many rounds of Minor GC. When old generation memory is full, Major GC performs.</p>
+<h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><p>A Collection represents a single unit of objects</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interfaces: Set, List, Queue, Deque</span><br><span class="line">classes:  Vector, ArrayList, LinkedList,</span><br><span class="line">          PriorityQueue, HashSet, LinkedHashSet, TreeSet</span><br></pre></td></tr></table></figure>
+<img src="/2019/04/22/java/hierarchy.png" title="hierarchy">
 
       
     </div>
@@ -564,7 +549,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -577,8 +562,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/08/CSS/" rel="next" title="How CSS is Parsed">
-                <i class="fa fa-chevron-left"></i> How CSS is Parsed
+              <a href="/2019/04/18/Firebase/" rel="next" title="Firebase">
+                <i class="fa fa-chevron-left"></i> Firebase
               </a>
             
           </div>
@@ -586,10 +571,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/09/Rabin-Karp/" rel="prev" title="Rabin Karp">
-                Rabin Karp <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -751,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Knowledge"><span class="nav-number">1.</span> <span class="nav-text">Basic Knowledge</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Architecture"><span class="nav-number">2.</span> <span class="nav-text">CSS Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-responsive-design-principles"><span class="nav-number">3.</span> <span class="nav-text">Basic responsive design principles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Layout-types"><span class="nav-number">4.</span> <span class="nav-text">Layout types</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-tips-using-vsc-extensions"><span class="nav-number">5.</span> <span class="nav-text">Some tips using vsc extensions</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-overriding-amp-overloading"><span class="nav-number">1.</span> <span class="nav-text">1.overriding &amp; overloading</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#overriding"><span class="nav-number">1.1.</span> <span class="nav-text">overriding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overloading"><span class="nav-number">1.2.</span> <span class="nav-text">overloading</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-amp-final"><span class="nav-number">2.</span> <span class="nav-text">static &amp; final</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#static"><span class="nav-number">2.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final"><span class="nav-number">2.2.</span> <span class="nav-text">final</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-modifier"><span class="nav-number">3.</span> <span class="nav-text">Access modifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interface"><span class="nav-number">4.</span> <span class="nav-text">Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Generic-Interface"><span class="nav-number">4.1.</span> <span class="nav-text">Generic Interface</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">5.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Four-Pillars"><span class="nav-number">6.</span> <span class="nav-text">Four Pillars</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM"><span class="nav-number">7.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number">8.</span> <span class="nav-text">Collection</span></a></li></ol></div>
             
 
           </div>
