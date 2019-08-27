@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="Basics1. web serverWeb server有时候又称为Application server，提供HTTP/HTTPs服务。HTTP/HTTPs是超文本传输协议，用于browser和server之间的协议。一台较好的server一般每s可以服务1k次访问请求。 2. Database数据库一般和server打交道，private network才能访问到，支持CRUD增删查改。合理的">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-27T04:44:39.657Z">
+<meta property="og:updated_time" content="2019-08-27T14:36:55.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="System Design 基本概念">
 <meta name="twitter:description" content="Basics1. web serverWeb server有时候又称为Application server，提供HTTP/HTTPs服务。HTTP/HTTPs是超文本传输协议，用于browser和server之间的协议。一台较好的server一般每s可以服务1k次访问请求。 2. Database数据库一般和server打交道，private network才能访问到，支持CRUD增删查改。合理的">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-26 23:44:39" itemprop="dateModified" datetime="2019-08-26T23:44:39-05:00">2019-08-26</time>
+                <time title="Modified: 2019-08-27 09:36:55" itemprop="dateModified" datetime="2019-08-27T09:36:55-05:00">2019-08-27</time>
               
             
           </span>
@@ -486,6 +486,7 @@
 <li>如果需要支持Transaction，就不能使用NoSQL<br>Transaction是指对一些内容的操作同时成功或失败，比如A.money += 10, B.money -= 10.</li>
 <li>NoSQL在一些事上比如serialization, Multiple Indexes上需要自己做<br>Serialization是指不同类型的数据存储时需要先serialize</li>
 <li>想获得更快的速度等高性能，用NoSQL</li>
+<li>如果需要sequential ID，用SQL，因为NoSQL的ID不是连续的</li>
 </ul>
 <p><strong>NoSQL原理</strong><br>是分布式数据库，便于scalability。<br>可能存在的未解决问题是Query Language, Secondary Index, ACID transaction, Trust and Confidence</p>
 <h5 id="1-Sharding"><a href="#1-Sharding" class="headerlink" title="1) Sharding"></a>1) Sharding</h5><p>Sharding is a type of database partitioning that separates very large data into smaller, faster, more easily managed parts called data shards.<br>按照一定的规则把数据拆分成不同的部分，放在不同的机器上。  </p>
@@ -529,10 +530,10 @@
 <h4 id="8-Master-Slave"><a href="#8-Master-Slave" class="headerlink" title="8.Master-Slave"></a>8.Master-Slave</h4><p>Master-Slave is a communication model where one device or process (known as the master) controls one or more other devices or processes (known as slaves).</p>
 <h5 id="1-In-Database"><a href="#1-In-Database" class="headerlink" title="1) In Database"></a>1) In Database</h5><p>In Database, SQL uses master-slave to do replica:</p>
 <ul>
-<li>Master for Write/Read</li>
+<li>Master for Write/Read？？write</li>
 <li>Slave for Read only</li>
 </ul>
-<p>Write Ahead Log<br>SQL数据库的任何操作，都会以log形式做一份记录。Master每次有任何操作，就通知slave来读log，因此slave上的数据是有延迟的。<br>如果master breaks down，就将某台slave升级为master。</p>
+<p>Write Ahead Log<br>SQL数据库的任何Write操作，都会以log形式把这个操作做一份记录。Master每次有任何操作，就通知slave来读log，因此slave上的数据是有延迟的。<br>如果master breaks down，就将某台slave升级为master。</p>
 
       
     </div>

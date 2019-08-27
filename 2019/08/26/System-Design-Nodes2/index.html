@@ -106,7 +106,9 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/sessionTable.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/cassandra_frienship.png">
-<meta property="og:updated_time" content="2019-08-27T04:46:44.716Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/tinyURLScale.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/tinyURLWorkSolution.png">
+<meta property="og:updated_time" content="2019-08-27T16:35:54.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="System Design II">
 <meta name="twitter:description" content="I. Design User SystemScenario FeaturesRegister, Login, Search, Edit User Profile.查询的需求量最大 ComputationDAU = 100M.QPS for register/login/edit = 100M  0.1 / 86400 = 100Peak QPS = 100  3 = 300  Service Au">
@@ -419,12 +421,24 @@
                 
               
 
-              <time title="Created: 2019-08-26 19:28:46 / Modified: 23:46:44" itemprop="dateCreated datePublished" datetime="2019-08-26T19:28:46-05:00">2019-08-26</time>
+              <time title="Created: 2019-08-26 19:28:46" itemprop="dateCreated datePublished" datetime="2019-08-26T19:28:46-05:00">2019-08-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-27 11:35:54" itemprop="dateModified" datetime="2019-08-27T11:35:54-05:00">2019-08-27</time>
               
             
           </span>
@@ -482,13 +496,38 @@
 <li>Vertical Sharding<br>不同的table放在不同的服务器上，但是依然存在单点失效问题</li>
 <li>Horizontal Sharding</li>
 </ul>
-<p>2)Replica<br>通常一式三份；同时还能做到分摊read请求 </p>
+<p>2)Replica<br>通常一式三份；同时还能做到分摊read请求。是实时的，数据写入的时候就会复制了。这和Backup不同，backup是周期性的备份。</p>
 <ul>
 <li>SQL，用master-slave来实现</li>
-<li>NoSQL，顺时针找3台机器来实现</li>
+<li>NoSQL，在consistent hashing环上顺时针找3台virtual nodes对应的机器来实现</li>
 </ul>
 <p><br></p>
-<h3 id="II"><a href="#II" class="headerlink" title="II."></a>II.</h3>
+<h3 id="II-Design-TinyURL"><a href="#II-Design-TinyURL" class="headerlink" title="II. Design TinyURL"></a>II. Design TinyURL</h3><p><strong>1. Scenario</strong><br>Features:<br>TinyURL负责把long url and short url来回转换返回给user。注意不是用户通过TinyURL来访问短网址。<br>Long和short是一对多的关系。</p>
+<p>Computation:<br>1)Create a tiny url<br>DAU = 100M<br>QPS = 100M <em> 0.1 / 86400 = 100(假设每个用户平均每天产生一条url)<br>Peak QPS = 100 </em> 2 = 200</p>
+<p>2)Click a tiny url<br>DAU = 100M<br>Average Read QPS = 100M * 1 / 86400 = 1K<br>Peak Read QPS = 2K</p>
+<p>综上，2K个QPS，用一台MySQL数据库可以支持</p>
+<p>3)New URL Storage<br>100M <em> 0.1 = 10M<br>10M </em> 100(100 is the length of url) = 1GB</p>
+<p><strong>2. Service</strong><br>URL Service<br>1)逻辑设计：encode(long_url), decode(short_url)<br>2)接口设计：<br>想要访问short_url: GET /&lt;short_url&gt;, return a redirect response.<br>想要把long转换成short：POST/data/shorten, Data={long_url}, return a short url</p>
+<p><strong>3. Storage</strong><br>NoSQL和SQL取决于选择的算法是什么</p>
+<p><strong>算法：</strong><br>1)随机生成short url，用数据库去重。如果没有用过，就绑定给long url.<br>应用：比如定的票，发给用户的查询码就是随机生成的。这个查询码不像验证码可以相同，<br>而是必须不同，也不能有规律生成，否则容易被别人破解而暴露信息。</p>
+<p>需要分别对shortKey和longKey分别进行索引Index。<br>如果用SQL，就一张表可以；如果用NoSQL，需要两张表</p>
+<p>2)进制转换Base62<br>将6位的short url看成是一个62位的进制数，即这6个位置上，每一个位置可以放0-9, a-z, A-Z的任意数字。<br>每个short url对应到一个整数ID，该ID对应于数据库中的Primary Key - Sequential ID.</p>
+<p>缺点，依赖于全局的自增ID，容易被破解。</p>
+<p>由于需要自增ID，所以只能用SQL。表单里是ID和long url。因为short url可以和ID换算，所以可以不存储在表单里。</p>
+<p><strong>4. Scale</strong><br>A) How to reduce response time?<br>1)Cache<br>因为读多写少，可以提高Web server与db server之间的访问效率，利用Cache Aside:</p>
+<img src="/2019/08/26/System-Design-Nodes2/tinyURLScale.png">
+<p>2)地理位置信息提速</p>
+<ul>
+<li>优化server的访问速度<br>不同的地区使用不同的web server, 这样可以通过DNS解析不同地区的user到不同的server</li>
+<li>优化data的访问速度<br>使用Centrailized MySQL + distributed memcahced<br>一个MySQL配多个memcached，memcached跨地区分布</li>
+</ul>
+<p>B) How to scale?<br>当cache不够，或者write操作越来越多时，会需要越多的db servers。增加多台DB server可以优化storage和QPS。对于TinyURL来说，更多的是为了解决QPS的问题。<br>那么就需要将data sharding到不同的数据库上。这里有点乱，建议看PPT</p>
+<p>C) 扩展Short key from 6bits to 7bits<br>在short key前面加一个前置位，该前置位的值由hash(long_url) % 62得到。由这个前置位作为sharding key，来判断去哪台机器上获取数据。<br>这样就可以同时通过short url和long url得到sharding key，而不用广播，直接找到所在的数据库。</p>
+<p>D) 按照网站地区来进行sharding，比如美国网站的数据放在美国的DB中</p>
+<p>最终架构图：<br><img src="/2019/08/26/System-Design-Nodes2/tinyURLWorkSolution.png"></p>
+<p><strong>5. 其他可能的问题</strong><br>custom url功能，需要另外创建一个custom url table，而不是在原有的url table上增加一个新的列。</p>
+<p>当创建custom short url时，去custom table里查询是否已经存在，不存在就插入新数据。<br>当要创建普通的短链接时，先去custom table里查询是否存在，再去URL table里查询是否存在和插入新数据。<br>当要得到某short url对应的long url时，先查询custom table，再去查询URL table。</p>
+
       
     </div>
 
@@ -700,7 +739,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-Design-User-System"><span class="nav-number">1.</span> <span class="nav-text">I. Design User System</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scenario"><span class="nav-number">1.1.</span> <span class="nav-text">Scenario</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service"><span class="nav-number">1.2.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Storage"><span class="nav-number">1.3.</span> <span class="nav-text">Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scale"><span class="nav-number">1.4.</span> <span class="nav-text">Scale</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#II"><span class="nav-number">2.</span> <span class="nav-text">II.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-Design-User-System"><span class="nav-number">1.</span> <span class="nav-text">I. Design User System</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scenario"><span class="nav-number">1.1.</span> <span class="nav-text">Scenario</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service"><span class="nav-number">1.2.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Storage"><span class="nav-number">1.3.</span> <span class="nav-text">Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scale"><span class="nav-number">1.4.</span> <span class="nav-text">Scale</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#II-Design-TinyURL"><span class="nav-number">2.</span> <span class="nav-text">II. Design TinyURL</span></a></li></ol></div>
             
 
           </div>

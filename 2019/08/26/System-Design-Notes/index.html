@@ -106,7 +106,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Notes/twitterService.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Notes/twitterStorage.png">
-<meta property="og:updated_time" content="2019-08-27T03:52:17.386Z">
+<meta property="og:updated_time" content="2019-08-27T16:37:46.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="System Design I">
 <meta name="twitter:description" content="Introduction1.常见System Design问题 设计某系统Design Twitter, Uber, Whatsapp, TinyURL, NoSQL… 设计某系统中的某功能Design Rate Limiter, Delete Twitter, Mark email as read…  2.与OOD的异同 OODClass, Interface, Inheritance… Sys">
@@ -419,12 +419,24 @@
                 
               
 
-              <time title="Created: 2019-08-26 12:04:32 / Modified: 22:52:17" itemprop="dateCreated datePublished" datetime="2019-08-26T12:04:32-05:00">2019-08-26</time>
+              <time title="Created: 2019-08-26 12:04:32" itemprop="dateCreated datePublished" datetime="2019-08-26T12:04:32-05:00">2019-08-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-27 11:37:46" itemprop="dateModified" datetime="2019-08-27T11:37:46-05:00">2019-08-27</time>
               
             
           </span>
@@ -507,7 +519,7 @@
 <li>NoSQL: Twitter Service and Friend Service<br>因为查询比较简洁，由于推文增加比user要快，所以用Nosql自带分布式属性。而且NoSQL扩展比较容易，而放在sql里就需要自己做sharding  </li>
 </ul>
 <p>2)File System<br>Media and Video files<br>3)Cache</p>
-<p>如果Read Operation很多，一定要用cache来进行优化！<br>如果读写都多，可以使用更多的db来分摊，或者使用Redis这种读写多快的数据库。</p>
+<p>如果Read Operation很多，一定要用cache来进行优化！<br>如果Write Operation很多，可以用sharding<br>如果读写都多，可以使用更多的db来分摊，或者使用Redis这种读写多快的数据库。</p>
 <img src="/2019/08/26/System-Design-Notes/twitterStorage.png">
 <h4 id="4-Scale"><a href="#4-Scale" class="headerlink" title="4.Scale"></a>4.Scale</h4><p>主要分成两个部分：</p>
 <ul>
