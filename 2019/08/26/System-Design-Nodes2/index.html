@@ -96,20 +96,28 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Secret Garden">
-<meta property="og:url" content="http://yoursite.com/tags/Divide-and-Conquer/index.html">
+  <meta name="description" content="I. Design User SystemScenario FeaturesRegister, Login, Search, Edit User Profile.查询的需求量最大 ComputationDAU = 100M.QPS for register/login/edit = 100M  0.1 / 86400 = 100Peak QPS = 100  3 = 300  Service Au">
+<meta name="keywords" content="system design">
+<meta property="og:type" content="article">
+<meta property="og:title" content="System Design II">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/index.html">
 <meta property="og:site_name" content="Secret Garden">
+<meta property="og:description" content="I. Design User SystemScenario FeaturesRegister, Login, Search, Edit User Profile.查询的需求量最大 ComputationDAU = 100M.QPS for register/login/edit = 100M  0.1 / 86400 = 100Peak QPS = 100  3 = 300  Service Au">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/sessionTable.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/cassandra_frienship.png">
+<meta property="og:updated_time" content="2019-08-27T04:46:44.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Secret Garden">
+<meta name="twitter:title" content="System Design II">
+<meta name="twitter:description" content="I. Design User SystemScenario FeaturesRegister, Login, Search, Edit User Profile.查询的需求量最大 ComputationDAU = 100M.QPS for register/login/edit = 100M  0.1 / 86400 = 100Peak QPS = 100  3 = 300  Service Au">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/26/System-Design-Nodes2/sessionTable.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Divide-and-Conquer/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/System-Design-Nodes2/">
 
 
 
@@ -119,7 +127,7 @@
   };
 </script>
 
-  <title>Tag: Divide and Conquer | Secret Garden</title>
+  <title>System Design II | Secret Garden</title>
   
 
 
@@ -167,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -243,7 +251,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -348,82 +356,207 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Divide and Conquer<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/System-Design-Nodes2/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Annie Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secret Garden">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/02/09/Quick-Sort-Merge-Sort/" itemprop="url">
-            
-              <span itemprop="name">Quick Sort & Merge Sort</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">System Design II
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-09T10:50:06-06:00" content="2019-02-09">
-          02-09
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-26 19:28:46 / Modified: 23:46:44" itemprop="dateCreated datePublished" datetime="2019-08-26T19:28:46-05:00">2019-08-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="I-Design-User-System"><a href="#I-Design-User-System" class="headerlink" title="I. Design User System"></a>I. Design User System</h3><h4 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h4><ul>
+<li>Features<br>Register, Login, Search, Edit User Profile.<br>查询的需求量最大</li>
+<li>Computation<br>DAU = 100M.<br>QPS for register/login/edit = 100M <em> 0.1 / 86400 = 100<br>Peak QPS = 100 </em> 3 = 300</li>
+</ul>
+<h4 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h4><ul>
+<li>Auth Service<br>负责register and login</li>
+<li>User Service<br>负责用户信息的存储和查询</li>
+<li>FriendShip Service<br>负责好友关系的存储</li>
+</ul>
+<h4 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h4><p><strong>一般来说，给人用的系统都是读多写少，给机器用的系统是写多读少。一个读多写少的系统，Read多就一定要用cache进行优化！</strong></p>
+<p>1)对于User service, 用户系统的特点是 <strong>读多写少</strong>，所以应该放在cache里进行优化。但是user info应该放在可以数据持久化的存储系统中，所以不能用memcached。</p>
+<p>2)对于Auth Service，需要一个session会话表。<br>User Login后，创建一个session object，把session key作为cookie返回给浏览器，浏览器将这个值保存在浏览器的cookie中。User每次向server发送访问请求，都会带上这个网站的所有cookie。server检查到cookie中的session_key是有效的，就认为用户登录了。<br><strong>(Session存放在server端；Cookie存放在client端)</strong></p>
+<p>User Logout后，session_table里会把他的数据删掉。</p>
+<img src="/2019/08/26/System-Design-Nodes2/sessionTable.png">
+<p>Session table的存放位置：<br>一般来说db和cache里都可以，如果cache断电了，让所有的users都logout是可以的，放在db中肯定更好，但由于用户系统是读多的，应该存放在db + cache里，用cache来优化。</p>
+<p>3)FriendShip Service<br>单向好友关系：twitter，ins，微博等<br>双向好友关系：whatsapp, fb，微信等</p>
+<p>用cassandra来存储friendship service，见下图：</p>
+<img src="/2019/08/26/System-Design-Nodes2/cassandra_frienship.png">
+<h4 id="Scale"><a href="#Scale" class="headerlink" title="Scale"></a>Scale</h4><p>为了防止Single Point Failure，需要两件事：Sharding &amp; Replica。  </p>
+<p>1)Sharding<br>按照一定的规则把数据拆分成不同的部分，放在不同的机器上。</p>
+<ul>
+<li>Vertical Sharding<br>不同的table放在不同的服务器上，但是依然存在单点失效问题</li>
+<li>Horizontal Sharding</li>
+</ul>
+<p>2)Replica<br>通常一式三份；同时还能做到分摊read请求 </p>
+<ul>
+<li>SQL，用master-slave来实现</li>
+<li>NoSQL，顺时针找3台机器来实现</li>
+</ul>
+<p><br></p>
+<h3 id="II"><a href="#II" class="headerlink" title="II."></a>II.</h3>
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/system-design/" rel="tag"># system design</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/26/System-Design-Notes/" rel="next" title="System Design I">
+                <i class="fa fa-chevron-left"></i> System Design I
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -444,8 +577,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -547,6 +689,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-Design-User-System"><span class="nav-number">1.</span> <span class="nav-text">I. Design User System</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scenario"><span class="nav-number">1.1.</span> <span class="nav-text">Scenario</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service"><span class="nav-number">1.2.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Storage"><span class="nav-number">1.3.</span> <span class="nav-text">Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scale"><span class="nav-number">1.4.</span> <span class="nav-text">Scale</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#II"><span class="nav-number">2.</span> <span class="nav-text">II.</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -676,6 +835,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -686,6 +849,8 @@
 
   
 
+
+  
 
 
   

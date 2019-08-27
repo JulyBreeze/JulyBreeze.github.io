@@ -106,7 +106,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Notes/twitterService.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/26/System-Design-Notes/twitterStorage.png">
-<meta property="og:updated_time" content="2019-08-27T00:27:39.483Z">
+<meta property="og:updated_time" content="2019-08-27T03:52:17.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="System Design I">
 <meta name="twitter:description" content="Introduction1.常见System Design问题 设计某系统Design Twitter, Uber, Whatsapp, TinyURL, NoSQL… 设计某系统中的某功能Design Rate Limiter, Delete Twitter, Mark email as read…  2.与OOD的异同 OODClass, Interface, Inheritance… Sys">
@@ -419,7 +419,7 @@
                 
               
 
-              <time title="Created: 2019-08-26 12:04:32 / Modified: 19:27:39" itemprop="dateCreated datePublished" datetime="2019-08-26T12:04:32-05:00">2019-08-26</time>
+              <time title="Created: 2019-08-26 12:04:32 / Modified: 22:52:17" itemprop="dateCreated datePublished" datetime="2019-08-26T12:04:32-05:00">2019-08-26</time>
             
 
             
@@ -460,15 +460,15 @@
       
         <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h4 id="1-常见System-Design问题"><a href="#1-常见System-Design问题" class="headerlink" title="1.常见System Design问题"></a>1.常见System Design问题</h4><ul>
 <li>设计某系统<br>Design Twitter, Uber, Whatsapp, TinyURL, NoSQL…</li>
-<li>设计某系统中的某功能<br>Design Rate Limiter, Delete Twitter, Mark email as read…<br><br></li>
+<li>设计某系统中的某功能<br>Design Rate Limiter, Delete Twitter, Mark email as read…</li>
 </ul>
 <h4 id="2-与OOD的异同"><a href="#2-与OOD的异同" class="headerlink" title="2.与OOD的异同"></a>2.与OOD的异同</h4><ul>
 <li>OOD<br>Class, Interface, Inheritance…</li>
 <li>System Design<br>Database, Cache, File System, Scalability, Master Slave, Load Balancer, Web Server, Sharding, Consistent Hashing, QPS…</li>
 </ul>
 <h4 id="3-4S分析法"><a href="#3-4S分析法" class="headerlink" title="3.4S分析法"></a>3.4S分析法</h4><ul>
-<li>Scenario<br>需要哪些功能<br>Ask: Features, Interfaces<br>Analyze: QPS(quries per second)/DAU(daily active users)</li>
-<li>Service<br>将大系统拆分成小的service<br>Split application into modules; Merge similar into one service<br>画图</li>
+<li>Scenario<br>Ask: Features, Interfaces. 即需要哪些功能<br>Analyze: QPS(quries per second), Peak QPS, DAU(daily active users)</li>
+<li>Service<br>将大系统拆分成小的service<br>Merge similar into one service<br>把service之间的关系图画出来</li>
 <li>Storage 这一步非常重要!!!<br>数据的存储和访问: Schema/Data/SQL or NoSQL/File System<br>Choose a proper db for each service，画图</li>
 <li>Scale<br>Optimize and Maintenance.<br>解决可能遇到的问题, Special case, Sharding</li>
 </ul>
@@ -476,34 +476,38 @@
 <h3 id="Design-Twitter"><a href="#Design-Twitter" class="headerlink" title="Design Twitter"></a>Design Twitter</h3><h4 id="1-Scenario"><a href="#1-Scenario" class="headerlink" title="1.Scenario"></a>1.Scenario</h4><p>1)首先把所有可能的功能罗列出来，从中挑选出核心功能。</p>
 <p>常见的twitter功能有：<br>Register/Login, User Profile Display/Edit, Upload Image/Video, Search, Post/share a twitter, Timeline/News Feed, Follow/Unfollow a user.</p>
 <p>核心功能：<br>Register/Login, Post a twitter, News Feed(自己关注的信息流的集合), Timeline(自己发的信息的集合), Follow/Unfollow a user</p>
-<p>2)Computions<br>一个TPS(transactions per second)里有多个database queries，一般就考虑QPS就行。</p>
+<p>2)Computations<br>一个TPS(transactions per second)里有多个database queries，一般就考虑QPS就行。</p>
 <ul>
 <li>QPS = DAU * querie per user / 一天的秒数(86400)</li>
 <li>Peak QPS = QPS * 3</li>
 <li>Read QPS &amp; Write QPS: 对database的操作频率</li>
 </ul>
 <p><br></p>
-<p>根据QPS的值来考虑db and server.<br>a) For server:</p>
+<p>根据QPS的值来考虑db and server:<br>a) For server</p>
 <ul>
 <li>QPS = 100<br>普通电脑做服务器即可</li>
-<li>QPS = 1K<br>一台好点的服务器，需要考虑single point failure</li>
+<li>QPS = 1K<br>一台好点的服务器，需要考虑single point failure, 解决方法Sharding &amp; Replica</li>
 <li>QPS = 1M<br>web server cluster, need to consider maintainance.</li>
 </ul>
-<p>b) For DB:</p>
+<p>b) For DB</p>
 <ul>
-<li>SQL DB = 1k QPS</li>
-<li>NoSQL Cassandra = 10k QPS</li>
-<li>NoSQL Memchached = 1M QPS</li>
+<li>MySQL/PosgreSQL DB = 1k QPS</li>
+<li>NoSQL Cassandra/MongoDB = 10k QPS</li>
+<li>NoSQL Redis/Memchached = 1M QPS</li>
 </ul>
-<h4 id="2-Service"><a href="#2-Service" class="headerlink" title="2.Service"></a>2.Service</h4><p>为每个feature添加一个service<br>Merge same and similar service</p>
+<h4 id="2-Service"><a href="#2-Service" class="headerlink" title="2.Service"></a>2.Service</h4><p>为每个feature添加一个service<br>Merge same and similar services</p>
 <img src="/2019/08/26/System-Design-Notes/twitterService.png">
-<h4 id="3-Storage"><a href="#3-Storage" class="headerlink" title="3.Storage"></a>3.Storage</h4><p>为每个service选择存储结构<br>Schema细化表结构</p>
+<h4 id="3-Storage"><a href="#3-Storage" class="headerlink" title="3.Storage"></a>3.Storage</h4><ul>
+<li>为每个service选择存储结构  </li>
+<li>Schema细化表结构</li>
+</ul>
 <p>1)Database</p>
 <ul>
 <li>SQL: User Table<br>因为user的信息比较多</li>
-<li>NoSQL: Twitter Service and Friend Service<br>因为查询比较简洁，由于推文增加比user要快，所以用nosql自带分布式属性。而且NoSQL扩展比较容易，而放在sql里就需要自己做sharding  </li>
+<li>NoSQL: Twitter Service and Friend Service<br>因为查询比较简洁，由于推文增加比user要快，所以用Nosql自带分布式属性。而且NoSQL扩展比较容易，而放在sql里就需要自己做sharding  </li>
 </ul>
 <p>2)File System<br>Media and Video files<br>3)Cache</p>
+<p>如果Read Operation很多，一定要用cache来进行优化！<br>如果读写都多，可以使用更多的db来分摊，或者使用Redis这种读写多快的数据库。</p>
 <img src="/2019/08/26/System-Design-Notes/twitterStorage.png">
 <h4 id="4-Scale"><a href="#4-Scale" class="headerlink" title="4.Scale"></a>4.Scale</h4><p>主要分成两个部分：</p>
 <ul>
@@ -512,11 +516,13 @@
 <li><p>Maintenance<br>Robust: If one server/db breaks down;<br>Scalability.<br><br></p>
 </li>
 </ul>
-<p><strong>1)Optimize</strong><br>a) 由于DB read很费时间，所以可以在db前加上cache。<br>比如cache每个user的timeline, cache每个user的news feed.</p>
-<p>b) Deal with inactive users.</p>
-<p>c) Special case<br>Q：If followers &gt;&gt; following, fanout will take a lot of time. How to solve it?<br>A：For ordinary user, use push model; For celebrity, use pull model.  </p>
-<p>Q：How to check a user a celebrity or not?<br>A：If a user is marked as celebrity, he will not be unmarked even if he lost a lot fans.</p>
-<p><strong>2)Maintenance</strong><br>见其他文章，链接：</p>
+<p><strong>1) Optimize</strong>  </p>
+<ul>
+<li>由于DB read很费时间，所以可以在db前加上cache。<br>比如cache每个user的timeline, cache每个user的news feed.</li>
+<li>Deal with inactive users.</li>
+<li>Special case<br>Q1：If followers &gt;&gt; following, fanout will take a lot of time. How to solve it?<br>A1：For ordinary user, use push model; For celebrity, use pull model.<br>Q2：How to check a user a celebrity or not?<br>A2：If a user is marked as celebrity, he will not be unmarked even if he lost a lot fans.</li>
+</ul>
+<p><strong>2) Maintenance</strong><br>见其他文章，链接：</p>
 <p><br></p>
 <h3 id="Pull-Model-amp-Push-Model"><a href="#Pull-Model-amp-Push-Model" class="headerlink" title="Pull Model &amp; Push Model"></a>Pull Model &amp; Push Model</h3><p>以News Feed为例</p>
 <h4 id="1-Pull-Model"><a href="#1-Pull-Model" class="headerlink" title="1.Pull Model"></a>1.Pull Model</h4><p>当user查看news feed时，需要获取其好友的前100条tweets。可以使用Merge K Sorted Arrays算法，合并出来得到news feed。这个merge算法因为是在内存中进行的，所以相比db的操作，其时间可以忽略。</p>
@@ -537,7 +543,7 @@
 <h4 id="2-存储likes、转发次数等"><a href="#2-存储likes、转发次数等" class="headerlink" title="2.存储likes、转发次数等"></a>2.存储likes、转发次数等</h4><p><strong>De-normalize</strong><br>Denormalized是通过在不同的Table中存储同一份数据的(也就是说至少一份是冗余数据)的形式，来加速数据的查询。<br>因为当数据只存储在一个固定的Table A的时候，如果访问其他TableB时需要同时取得关联的Table A的数据，则需要进行join之类的操作，这样会比较慢。</p>
 <p>比如统计有多少人点赞了一个帖子，可以通过select count(*) from like_table where post_id=&lt; id &gt;的方式来获取。</p>
 <p>但是也可以在post table中新增一个like_count列。每次点赞就+1。这里like_count就是一个 denormalized field，因为是可以通过 select count(*) 直接在 like_table 中获得的。</p>
-<h4 id="3-Thundering-Herd-惊群现象"><a href="#3-Thundering-Herd-惊群现象" class="headerlink" title="3.Thundering Herd 惊群现象"></a>3.Thundering Herd 惊群现象</h4><p>在高并发的情况下，如果因为缓存过期或者淘汰算法等原因，使得某条很热的记录被从缓存中删除后，会出现短时间内大量的数据请求，从而导致cache miss现象。数据从DB到cache需要时间，数据请求会都去访问DB，导致DB崩溃。</p>
+<h4 id="3-Thundering-Herd-惊群现象"><a href="#3-Thundering-Herd-惊群现象" class="headerlink" title="3.Thundering Herd 惊群现象"></a>3.Thundering Herd 惊群现象</h4><p>在高并发的情况下，如果因为缓存过期或者淘汰算法等原因，使得某条很热的记录被从缓存中删除后，会出现短时间内大量的数据请求，从而导致<strong>cache miss</strong>现象。数据从DB到cache需要时间，数据请求会都去访问DB，导致DB崩溃。</p>
 
       
     </div>
@@ -583,6 +589,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/26/System-Design-Nodes2/" rel="prev" title="System Design II">
+                System Design II <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -652,7 +662,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
