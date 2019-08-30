@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1.Design Twitter2.Design Auto">
+  <meta name="description" content="1.Design Twitter题目：   思路：   12 2. Design Search Autocomplete System题目：   思路：   12 3. Design File System题目：You are asked to design a file system which provides two functions:  create(path, value)Create">
 <meta name="keywords" content="design">
 <meta property="og:type" content="article">
 <meta property="og:title" content="design 例题集合">
 <meta property="og:url" content="http://yoursite.com/2019/06/20/designProblem/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="1.Design Twitter2.Design Auto">
+<meta property="og:description" content="1.Design Twitter题目：   思路：   12 2. Design Search Autocomplete System题目：   思路：   12 3. Design File System题目：You are asked to design a file system which provides two functions:  create(path, value)Create">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-20T20:50:03.137Z">
+<meta property="og:updated_time" content="2019-08-28T17:10:16.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="design 例题集合">
-<meta name="twitter:description" content="1.Design Twitter2.Design Auto">
+<meta name="twitter:description" content="1.Design Twitter题目：   思路：   12 2. Design Search Autocomplete System题目：   思路：   12 3. Design File System题目：You are asked to design a file system which provides two functions:  create(path, value)Create">
 
 
 
@@ -416,12 +416,24 @@
                 
               
 
-              <time title="Created: 2019-06-20 15:49:25 / Modified: 15:50:03" itemprop="dateCreated datePublished" datetime="2019-06-20T15:49:25-05:00">2019-06-20</time>
+              <time title="Created: 2019-06-20 15:49:25" itemprop="dateCreated datePublished" datetime="2019-06-20T15:49:25-05:00">2019-06-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-28 12:10:16" itemprop="dateModified" datetime="2019-08-28T12:10:16-05:00">2019-08-28</time>
               
             
           </span>
@@ -455,7 +467,25 @@
       
 
       
-        <h4 id="1-Design-Twitter"><a href="#1-Design-Twitter" class="headerlink" title="1.Design Twitter"></a>1.Design Twitter</h4><h4 id="2-Design-Auto"><a href="#2-Design-Auto" class="headerlink" title="2.Design Auto"></a>2.Design Auto</h4>
+        <h4 id="1-Design-Twitter"><a href="#1-Design-Twitter" class="headerlink" title="1.Design Twitter"></a>1.Design Twitter</h4><p>题目：  </p>
+<p>思路：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="2-Design-Search-Autocomplete-System"><a href="#2-Design-Search-Autocomplete-System" class="headerlink" title="2. Design Search Autocomplete System"></a>2. Design Search Autocomplete System</h4><p>题目：  </p>
+<p>思路：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-Design-File-System"><a href="#3-Design-File-System" class="headerlink" title="3. Design File System"></a>3. Design File System</h3><p>题目：<br>You are asked to design a file system which provides two functions:</p>
+<ul>
+<li>create(path, value)<br>Creates a new path and associates a value to it if possible and returns True. Returns False if the path already exists or its parent path doesn’t exist.</li>
+<li>get(path)<br>Returns the value associated with a path or returns -1 if the path doesn’t exist.</li>
+</ul>
+<p>The format of a path is one or more concatenated strings of the form: / followed by one or more lowercase English letters.<br>For example, /leetcode and /leetcode/problems are valid paths, while an empty string and / are not.</p>
+<p>思路：  </p>
+<p>method 1: only to check the nearest parent root existence.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileSystem</span> </span>&#123;</span><br><span class="line">    Map&lt;String, Integer&gt; map;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FileSystem</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="comment">//for path like "/a", it is valid, but it parent is "" </span></span><br><span class="line">        <span class="comment">// and the requirment says an empty string and / are not valid</span></span><br><span class="line">        <span class="comment">//so we make the value of "" is -1.</span></span><br><span class="line">        <span class="comment">//这样代码就都适用于"/a" 和其他有多个/的path了</span></span><br><span class="line">        map.put(<span class="string">""</span>, -<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">create</span><span class="params">(String path, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = path.lastIndexOf(<span class="string">"/"</span>);</span><br><span class="line">        String parent = path.substring(<span class="number">0</span>, index);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(!map.containsKey(parent) || map.containsKey(path)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        map.put(path, value);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(map.containsKey(path)) <span class="keyword">return</span> map.get(path);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>method2: use trie to store path</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileSystem</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        Map&lt;String, TrieNode&gt; map;<span class="comment">//store children node</span></span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        String str;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">TrieNode</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">            map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">            <span class="keyword">this</span>.str = str;</span><br><span class="line">            <span class="keyword">this</span>.val = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    TrieNode root;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FileSystem</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        root = <span class="keyword">new</span> TrieNode(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">create</span><span class="params">(String path, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        TrieNode cur = root;</span><br><span class="line">        String[] arrs = path.split(<span class="string">"/"</span>);<span class="comment">//arrs[0] = ""</span></span><br><span class="line">        <span class="comment">//边查边添加</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arrs.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!cur.map.containsKey(arrs[i]))&#123;</span><br><span class="line">                <span class="keyword">if</span>(i == arrs.length - <span class="number">1</span>)&#123;</span><br><span class="line">                    cur.map.put(arrs[i], <span class="keyword">new</span> TrieNode(arrs[i]));</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="comment">//this path's parent doesn't exist</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = cur.map.get(arrs[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//this path has existed</span></span><br><span class="line">        <span class="keyword">if</span>(cur.val != -<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        cur.val = value;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        String[] arrs = path.split(<span class="string">"/"</span>);</span><br><span class="line">        TrieNode cur = root;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arrs.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!cur.map.containsKey(arrs[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = cur.map.get(arrs[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cur.val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -573,7 +603,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -671,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Design-Twitter"><span class="nav-number">1.</span> <span class="nav-text">1.Design Twitter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Design-Auto"><span class="nav-number">2.</span> <span class="nav-text">2.Design Auto</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Design-Twitter"><span class="nav-number">1.</span> <span class="nav-text">1.Design Twitter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Design-Search-Autocomplete-System"><span class="nav-number">2.</span> <span class="nav-text">2. Design Search Autocomplete System</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Design-File-System"><span class="nav-number"></span> <span class="nav-text">3. Design File System</span></a></li></div>
             
 
           </div>
