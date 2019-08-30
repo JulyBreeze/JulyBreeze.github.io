@@ -96,21 +96,21 @@
 
 
 
-  <meta name="description" content="overriding &amp;amp; overloading(achieve Polymorphism)   overriding子类可以复写父类里的方法.In oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its s">
+  <meta name="description" content="I.Most Basics1.variables - primitive and reference  primitive(8种)  1234567booleancharinteger:  byte(8bits), short(16bits), int(32bits), long(64bits)  其中，int：[-2147483648, 2147483647] //10位float(32bits">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java basics">
+<meta property="og:title" content="Java Basics">
 <meta property="og:url" content="http://yoursite.com/2019/04/22/java/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="overriding &amp;amp; overloading(achieve Polymorphism)   overriding子类可以复写父类里的方法.In oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its s">
+<meta property="og:description" content="I.Most Basics1.variables - primitive and reference  primitive(8种)  1234567booleancharinteger:  byte(8bits), short(16bits), int(32bits), long(64bits)  其中，int：[-2147483648, 2147483647] //10位float(32bits">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/04/22/java/AccessModifier.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/22/java/relation.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/22/java/hierarchy.png">
-<meta property="og:updated_time" content="2019-08-30T14:52:52.122Z">
+<meta property="og:updated_time" content="2019-08-30T16:34:30.169Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java basics">
-<meta name="twitter:description" content="overriding &amp;amp; overloading(achieve Polymorphism)   overriding子类可以复写父类里的方法.In oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its s">
+<meta name="twitter:title" content="Java Basics">
+<meta name="twitter:description" content="I.Most Basics1.variables - primitive and reference  primitive(8种)  1234567booleancharinteger:  byte(8bits), short(16bits), int(32bits), long(64bits)  其中，int：[-2147483648, 2147483647] //10位float(32bits">
 <meta name="twitter:image" content="http://yoursite.com/2019/04/22/java/AccessModifier.png">
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>Java basics | Secret Garden</title>
+  <title>Java Basics | Secret Garden</title>
   
 
 
@@ -394,7 +394,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java basics
+          <h1 class="post-title" itemprop="name headline">Java Basics
 
               
             
@@ -437,7 +437,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-30 09:52:52" itemprop="dateModified" datetime="2019-08-30T09:52:52-05:00">2019-08-30</time>
+                <time title="Modified: 2019-08-30 11:34:30" itemprop="dateModified" datetime="2019-08-30T11:34:30-05:00">2019-08-30</time>
               
             
           </span>
@@ -471,7 +471,21 @@
       
 
       
-        <h3 id="overriding-amp-overloading"><a href="#overriding-amp-overloading" class="headerlink" title="overriding &amp; overloading"></a>overriding &amp; overloading</h3><p>(achieve Polymorphism)  </p>
+        <h3 id="I-Most-Basics"><a href="#I-Most-Basics" class="headerlink" title="I.Most Basics"></a>I.Most Basics</h3><p><strong>1.variables</strong> - primitive and reference</p>
+<ul>
+<li>primitive(8种)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span></span><br><span class="line"><span class="keyword">char</span></span><br><span class="line">integer:</span><br><span class="line">  <span class="keyword">byte</span>(<span class="number">8</span>bits), <span class="keyword">short</span>(<span class="number">16</span>bits), <span class="keyword">int</span>(<span class="number">32</span>bits), <span class="keyword">long</span>(<span class="number">64</span>bits)</span><br><span class="line">  其中，<span class="keyword">int</span>：[-<span class="number">2147483648</span>, <span class="number">2147483647</span>] <span class="comment">//10位</span></span><br><span class="line"><span class="keyword">float</span>(<span class="number">32</span>bits): <span class="keyword">float</span> x = <span class="number">32.5f</span>; <span class="comment">//必须加上f</span></span><br><span class="line"><span class="keyword">double</span>(<span class="number">64</span>bits)</span><br></pre></td></tr></table></figure>
+<p>local variables is within a method, it must be initialized before use.</p>
+<p><strong>2.Class &amp; objects</strong><br>class is the blueprint of objects, instance is another way of saying objects.</p>
+<p>Object has instance variables(state) and methods(behavior).</p>
+<p>一旦没有某object的variable了，这个object就会被GC回收。</p>
+<p><strong>3.Arrays</strong><br><strong>Arrays are always objects</strong>, whether they hold primitives or object references.</p>
+<p><strong>4.Java is pass everything by value</strong>, which means pass-by-copy.<br>如果传入的是一个reference variable, pass a copy of that remote control, 就是传入的是一个复制的地址。</p>
+<p><strong>5.setter &amp; getter</strong><br>用setter和getter的好处是，可以不破坏class的原有代码，而在这两个函数里做想做的事。比如instance variables are private, but setter and getter are public, so other objects can access to it by using setter and getter.</p>
+<p><strong>6.Java Library</strong><br>Every class in java belongs to a package.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br></pre></td></tr></table></figure>
+<h3 id="II-overriding-amp-overloading"><a href="#II-overriding-amp-overloading" class="headerlink" title="II.overriding &amp; overloading"></a>II.overriding &amp; overloading</h3><p>(achieve Polymorphism)  </p>
 <h4 id="overriding"><a href="#overriding" class="headerlink" title="overriding"></a>overriding</h4><p>子类可以复写父类里的方法.<br>In oop, overriding allows subclass to provide a specific implementation of a method that is already provided by one of its super classes. </p>
 <h4 id="overloading"><a href="#overloading" class="headerlink" title="overloading"></a>overloading</h4><p>必须是参数的数量或类型不一样，但是对返回的类型没有要求.<br>Allow different methods to have the same name, but different signatures differing on the number or type of the input parameters. Overloading cannot distinguish two same signatures with different return type.<br>Therefore, the return type can be same or different. Just make sure the number or type of input parameters are different.</p>
 <h3 id="static-amp-final"><a href="#static-amp-final" class="headerlink" title="static &amp; final"></a>static &amp; final</h3><h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><p>variable, method, class<br>static variable and method are on the class level which is shared with the objects.</p>
@@ -761,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#overriding-amp-overloading"><span class="nav-number">1.</span> <span class="nav-text">overriding &amp; overloading</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#overriding"><span class="nav-number">1.1.</span> <span class="nav-text">overriding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overloading"><span class="nav-number">1.2.</span> <span class="nav-text">overloading</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-amp-final"><span class="nav-number">2.</span> <span class="nav-text">static &amp; final</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#static"><span class="nav-number">2.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final"><span class="nav-number">2.2.</span> <span class="nav-text">final</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-modifier"><span class="nav-number">3.</span> <span class="nav-text">Access modifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interface"><span class="nav-number">4.</span> <span class="nav-text">Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Generic-Interface"><span class="nav-number">4.1.</span> <span class="nav-text">Generic Interface</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">5.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Four-Pillars"><span class="nav-number">6.</span> <span class="nav-text">Four Pillars</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-way-Java-works"><span class="nav-number">7.</span> <span class="nav-text">The way Java works</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM"><span class="nav-number">7.1.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#heap-amp-stack"><span class="nav-number">7.2.</span> <span class="nav-text">heap &amp; stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Garbage-Collection"><span class="nav-number">7.3.</span> <span class="nav-text">Garbage Collection</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number">8.</span> <span class="nav-text">Collection</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-Most-Basics"><span class="nav-number">1.</span> <span class="nav-text">I.Most Basics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#II-overriding-amp-overloading"><span class="nav-number">2.</span> <span class="nav-text">II.overriding &amp; overloading</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#overriding"><span class="nav-number">2.1.</span> <span class="nav-text">overriding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overloading"><span class="nav-number">2.2.</span> <span class="nav-text">overloading</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-amp-final"><span class="nav-number">3.</span> <span class="nav-text">static &amp; final</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#static"><span class="nav-number">3.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final"><span class="nav-number">3.2.</span> <span class="nav-text">final</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-modifier"><span class="nav-number">4.</span> <span class="nav-text">Access modifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interface"><span class="nav-number">5.</span> <span class="nav-text">Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Generic-Interface"><span class="nav-number">5.1.</span> <span class="nav-text">Generic Interface</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">6.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Four-Pillars"><span class="nav-number">7.</span> <span class="nav-text">Four Pillars</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-way-Java-works"><span class="nav-number">8.</span> <span class="nav-text">The way Java works</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM"><span class="nav-number">8.1.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#heap-amp-stack"><span class="nav-number">8.2.</span> <span class="nav-text">heap &amp; stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Garbage-Collection"><span class="nav-number">8.3.</span> <span class="nav-text">Garbage Collection</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number">9.</span> <span class="nav-text">Collection</span></a></li></ol></div>
             
 
           </div>
