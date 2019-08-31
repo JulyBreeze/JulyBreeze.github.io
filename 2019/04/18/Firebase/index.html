@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Firebase databaseRealtime database is NoSQL cloud-hosted database.Data is synced across all clients in realtime, and remains available when your app goes offline.   Data is stored as JSON. 具有的特点和怎么实现的">
+  <meta name="description" content="AuthFirebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom back">
 <meta name="keywords" content="firebase">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Firebase">
 <meta property="og:url" content="http://yoursite.com/2019/04/18/Firebase/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="Firebase databaseRealtime database is NoSQL cloud-hosted database.Data is synced across all clients in realtime, and remains available when your app goes offline.   Data is stored as JSON. 具有的特点和怎么实现的">
+<meta property="og:description" content="AuthFirebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom back">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-19T13:57:05.154Z">
+<meta property="og:updated_time" content="2019-08-31T21:24:09.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Firebase">
-<meta name="twitter:description" content="Firebase databaseRealtime database is NoSQL cloud-hosted database.Data is synced across all clients in realtime, and remains available when your app goes offline.   Data is stored as JSON. 具有的特点和怎么实现的">
+<meta name="twitter:description" content="AuthFirebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom back">
 
 
 
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-19 08:57:05" itemprop="dateModified" datetime="2019-04-19T08:57:05-05:00">2019-04-19</time>
+                <time title="Modified: 2019-08-31 16:24:09" itemprop="dateModified" datetime="2019-08-31T16:24:09-05:00">2019-08-31</time>
               
             
           </span>
@@ -467,13 +467,43 @@
       
 
       
-        <h3 id="Firebase-database"><a href="#Firebase-database" class="headerlink" title="Firebase database"></a>Firebase database</h3><p>Realtime database is NoSQL cloud-hosted database.<br>Data is synced across all clients in realtime, and remains available when your app goes offline.  </p>
+        <h3 id="Auth"><a href="#Auth" class="headerlink" title="Auth"></a>Auth</h3><p>Firebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom backend.</p>
+<h3 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h3><p>Uploads and downloads are robust, they restart where they stopped.<br>Cloud Storage stores your files in a Google Cloud Storage bucket, making them accessible through both Firebase and Google Cloud</p>
+<h3 id="Real-time-database"><a href="#Real-time-database" class="headerlink" title="Real-time database"></a>Real-time database</h3><h4 id="1-Docs"><a href="#1-Docs" class="headerlink" title="1.Docs"></a>1.Docs</h4><p>Realtime database is NoSQL cloud-hosted database.<br>Data is synced across all clients in realtime, and remains available when your app goes offline. All of your clients share one Realtime Database instance and automatically receive updates with the newest data.</p>
 <p>Data is stored as JSON.</p>
-<p>具有的特点和怎么实现的简要解释：<br>1) Realtime<br>Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization. Every time data changes, any connected device receives that update within milliseconds. </p>
-<p>2) Offline<br>Firebase apps remain responsive even when offline, because the Firebase Realtime Database SDK persists your data to disk locally. Once connectivity is reestablished, the client device receives any changes it missed, synchronizing it with the current server state.</p>
-<p>3) Scale across multiple databases<br>By splitting your data across multiple database instances in the same Firebase project.<br>Streamline authentication with Firebase Authentication on your project and authenticate users across your database instances. Control access to the data in each database with custom Firebase Realtime Database Rules for each database instance.</p>
-<p>网上查到的有关realtime怎么实现的：<br>1) It is a mix of no-sql database, pub/sub server, web-sockets server, client-side library:<br>user subscribe to some data; a server keep track of those subscriptions, as soon a new subscription happen some data is sent back as message; when one client writes some data then the pub server(like redis) broadcast this update to all the other active subscriptions.<br>基本就是client-side update is transmitted to server without initialzing a new connection;<br>server pushes the update to other connected client side</p>
-
+<p>具有的特点和怎么实现的简要解释：<br>1)Realtime<br>Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization. Every time data changes, any connected device receives that update within milliseconds.</p>
+<p>2)Offline<br>Firebase apps remain responsive even when offline, because the Firebase Realtime Database SDK persists your data to disk locally. Once connectivity is reestablished, the client device receives any changes it missed, synchronizing it with the current server state.</p>
+<p>3)Scale across multiple databases<br>By splitting your data across multiple database instances in the same Firebase project.<br>Streamline authentication with Firebase Authentication on your project and authenticate users across your database instances. Control access to the data in each database with custom Firebase Realtime Database Rules for each database instance.</p>
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>网上查到的有关realtime怎么实现的：<br>It is a mix of NoSQL database, Publish/subscribe server, web-sockets server, client-side library:<br>User subscribe to some data;<br>A server keep track of those subscriptions, as soon a new subscription happen, some data is sent back as message;<br>When one client writes some data, then the pub server(like redis) broadcast this update to all the other active subscriptions.</p>
+<p>基本就是Push Model:<br>Client-side update is transmitted to server without initialzing a new connection;<br>Server pushes the update to other connected client side.</p>
+<h3 id="3-Online-offline-status"><a href="#3-Online-offline-status" class="headerlink" title="3.Online/offline status"></a>3.Online/offline status</h3><p>The server monitors the connection. If at any point, the connection times out or is actively closed by the Realtime Database client, the server checks security a second time (to make sure the operation is still valid) and then invokes the event.</p>
+<p>DB provides a special location at</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/.info/connected</span><br></pre></td></tr></table></figure>
+<p>which is updated every time the Firebase Realtime Database client’s connection state changes.</p>
+<p>这个special location不会在clients之间分享</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> connectedRef = firebase.database().ref(<span class="string">".info/connected"</span>);</span><br><span class="line"></span><br><span class="line">connectedRef.on(<span class="string">"value"</span>, (snapshot) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(snapshot.val() === <span class="keyword">true</span>) &#123;</span><br><span class="line">    alert(<span class="string">"connected"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="4-Listeners"><a href="#4-Listeners" class="headerlink" title="4.Listeners"></a>4.Listeners</h3><p>Data stored in a Firebase Realtime Database is retrieved by attaching an <strong>asynchronous listener</strong> to a database reference.<br>An event listener may receive several different events:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//used to read a static snapshot of the contents at a given database path,</span></span><br><span class="line"><span class="string">"value"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//used when retrieving a list of items from the database</span></span><br><span class="line"><span class="comment">//triggered once for each existing child and again every time a new child is added</span></span><br><span class="line"><span class="string">"child_added"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//is triggered any time a child node is modified, including any modifications to descendants of the child node</span></span><br><span class="line"><span class="string">"child_changed"</span></span><br><span class="line"><span class="string">"child_removed"</span></span><br></pre></td></tr></table></figure>
+<p>Writes from a single client will always be written to the server and broadcast out to other users in-order.<br>‘value’ events are always triggered last and are guaranteed to contain updates from any other events which occurred before that snapshot was taken.</p>
+<h3 id="5-使用"><a href="#5-使用" class="headerlink" title="5.使用"></a>5.使用</h3><p>1.Data structure<br>Data is stored as JSON objects.</p>
+<p>Avoid nesting data: flatten data structure.<br>If the data is instead split into separate paths, also called <strong>denormalization</strong>, it can be efficiently downloaded in separate calls, as it is needed.</p>
+<p>2.Read/Write Data<br>Firebase data is retrieved by attaching an asynchronous listener to a firebase.database.Reference.</p>
+<p>1)Write</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//can save data to a specified reference</span></span><br><span class="line"><span class="comment">//or replacing any existing data at that path</span></span><br><span class="line">firebase.database().ref(<span class="string">'users'</span>).set(&#123;</span><br><span class="line">  name: <span class="string">'John'</span>,</span><br><span class="line">  email: <span class="string">'xxx@gmail.com'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>2)Read &amp; Listen for changes</p>
+<p>Use ‘value’ event to read a static snapshot of the contents at a given path, as they existed at the time of the event.<br>This method is triggered once when the listener is attached and again every time the data, including children, changes.</p>
+<p>The listener receives a snapshot that contains the data at the specified location in the database at the time of the event. You can retrieve the data in the snapshot with the val() method.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//triggered every time data changed</span></span><br><span class="line"><span class="comment">//snapshot contains all data at that location</span></span><br><span class="line">xxxRef.on(<span class="string">'value'</span>, (snapshot) =&gt; &#123;</span><br><span class="line">  console.log(snapshot.val());</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//triggered once and then does not triggered again.</span></span><br><span class="line">xxxRef.once(<span class="string">'value'</span>).then((snapshot) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something here</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>You can traverse into the snapshot by calling child() to return child snapshots.</p>
+<p>3)Update  </p>
+<p>4)Push<br>push() enerates a new child location using a unique key and returns its Reference.</p>
+<p>If you provide a value to push(), the value is written to the generated location.<br>If you don’t pass a value, nothing is written to the database and the child remains empty (but you can use the Reference elsewhere).</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.push().key; <span class="comment">//get the key for a new data</span></span><br></pre></td></tr></table></figure>
+<p>5)Delete</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.remove(); <span class="comment">//delete</span></span><br></pre></td></tr></table></figure>
+<p>6)Detach listener</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//with no arguments removes all listeners at that location.</span></span><br><span class="line">.off();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref(path)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -689,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Firebase-database"><span class="nav-number">1.</span> <span class="nav-text">Firebase database</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Auth"><span class="nav-number">1.</span> <span class="nav-text">Auth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloud-Storage"><span class="nav-number">2.</span> <span class="nav-text">Cloud Storage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-time-database"><span class="nav-number">3.</span> <span class="nav-text">Real-time database</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Docs"><span class="nav-number">3.1.</span> <span class="nav-text">1.Docs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">3.2.</span> <span class="nav-text">2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Online-offline-status"><span class="nav-number">4.</span> <span class="nav-text">3.Online/offline status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Listeners"><span class="nav-number">5.</span> <span class="nav-text">4.Listeners</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用"><span class="nav-number">6.</span> <span class="nav-text">5.使用</span></a></li></ol></div>
             
 
           </div>
