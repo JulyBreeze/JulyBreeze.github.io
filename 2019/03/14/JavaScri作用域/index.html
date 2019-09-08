@@ -99,14 +99,14 @@
   <meta name="description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}The parent scope cannot access variables in the child scope.Child sco">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2.JavaScrit Scope">
+<meta property="og:title" content="1.JavaScrit Scope">
 <meta property="og:url" content="http://yoursite.com/2019/03/14/JavaScri作用域/index.html">
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}The parent scope cannot access variables in the child scope.Child sco">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-11T21:53:05.322Z">
+<meta property="og:updated_time" content="2019-09-01T00:31:34.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2.JavaScrit Scope">
+<meta name="twitter:title" content="1.JavaScrit Scope">
 <meta name="twitter:description" content="Scope (Static Scoping) Global Scopecontains variable defined out of any code block Local Scopelocal scope created by a code block{}The parent scope cannot access variables in the child scope.Child sco">
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>2.JavaScrit Scope | Secret Garden</title>
+  <title>1.JavaScrit Scope | Secret Garden</title>
   
 
 
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2.JavaScrit Scope
+          <h1 class="post-title" itemprop="name headline">1.JavaScrit Scope
 
               
             
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-11 16:53:05" itemprop="dateModified" datetime="2019-04-11T16:53:05-05:00">2019-04-11</time>
+                <time title="Modified: 2019-08-31 19:31:34" itemprop="dateModified" datetime="2019-08-31T19:31:34-05:00">2019-08-31</time>
               
             
           </span>
@@ -469,27 +469,29 @@
       
         <h3 id="Scope-Static-Scoping"><a href="#Scope-Static-Scoping" class="headerlink" title="Scope (Static Scoping)"></a>Scope (Static Scoping)</h3><ul>
 <li>Global Scope<br>contains variable defined out of any code block</li>
-<li><p>Local Scope<br>local scope created by a code block{}<br>The parent scope cannot access variables in the child scope.<br>Child scope can access values defined in itself or any parent/ancestor scope</p>
-</li>
-<li><p>Shadowing<br>Occurs when a local variable shadows over a global variabe and take precedent.  </p>
-</li>
-<li>Leaked Global<br>When shadowing, js will go all the way up to the global scope to find a variable’s value.<br>If don’t find it in the global scope, js will create it as a global variable, which means a variable in the local scope leaks into global scope.</li>
+<li>Local Scope<br>local scope created by a code block{}<br>The parent scope cannot access variables in the child scope.<br>Child scope can access values defined in itself or any parent/ancestor scope</li>
+<li>Shadowing<br>Occurs when a local variable shadows over a global variabe and take precedent.<br>内部scope里的一个变量和global变量同名，那么在这个scope里优先使用local变量  </li>
+<li>Leaked Global<br>When shadowing, js will go all the way up to the global scope to find a variable’s value.<br>If js does’t find it in the global scope, js will create it as a global variable, which means a variable in the local scope leaks into global scope.</li>
 </ul>
-<p>总结：<br>父对象的所有变量对子对象都是可见，反之则不成立。<br>(chain scope: 子对象会一级一级地向上寻找所有父对象的变量) </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> getScore = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="number">1</span> &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    score = <span class="number">3</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(score)</span><br><span class="line">&#125;</span><br><span class="line">getScore()</span><br><span class="line"><span class="built_in">console</span>.log(score) <span class="comment">// Prints 3</span></span><br></pre></td></tr></table></figure>
-<p>在一个作用域里，js解析分两步:</p>
+<p>总结：<br>父对象的所有变量对子对象都是可见，反之则不成立。<br>(chain scope: 子对象会一级一级地向上寻找所有父对象的变量)<br><br></p>
+<p>例题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> getScore = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="number">1</span> &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    score = <span class="number">3</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(score);</span><br><span class="line">&#125;</span><br><span class="line">getScore();</span><br><span class="line"><span class="built_in">console</span>.log(score); <span class="comment">// Prints 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>在一个作用域里，js解析分两步:</p>
 <ul>
 <li>预解析<br>在代码真正运行前，所有变量和函数，此时都是undefined;<br>遇到重名，只留下一个；变量和函数重名，只留下函数。</li>
 <li>逐行解析(开始解析每句code)  </li>
 </ul>
 <p>函数内部也是一个作用域，所以也会进行预解析和逐行解析，且函数中局部优先(Shadowing)。</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>1.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(a); <span class="comment">//output 1</span></span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line">alert(a); <span class="comment">//output 2</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>1.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(a); <span class="comment">//output 1</span></span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line">alert(a); <span class="comment">//output 2</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">预解析： var a; fn = function()&#123;...&#125;</span><br><span class="line">逐行解析： </span><br><span class="line">  a = 1</span><br><span class="line">  fn()调用</span><br><span class="line">    预解析： none</span><br><span class="line">    逐行解析：alert(a) //1</span><br><span class="line">             a = 2</span><br><span class="line">  alert(a) //2</span><br></pre></td></tr></table></figure>
 <p>2.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(a); <span class="comment">//output undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line">alert(a); <span class="comment">//output 1</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">预解析： var a; fn = function()&#123;...&#125;</span><br><span class="line">逐行解析： </span><br><span class="line">  a = 1</span><br><span class="line">  fn()调用</span><br><span class="line">    预解析： var _a</span><br><span class="line">    逐行解析：alert(_a) //undefined</span><br><span class="line">             _a = 2</span><br><span class="line">  alert(a)</span><br></pre></td></tr></table></figure>
-<p>3.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  alert(a); <span class="comment">//output undefined</span></span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line">alert(a); <span class="comment">//output 1</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">预解析： var a; fn = function()&#123;...&#125;</span><br><span class="line">逐行解析： </span><br><span class="line">  a = 1</span><br><span class="line">  fn()调用</span><br><span class="line">    预解析： var _a (函数传入的参数是local variable)</span><br><span class="line">    逐行解析：alert(_a) //undefined</span><br><span class="line">             _a = 2</span><br><span class="line">  alert(a)</span><br></pre></td></tr></table></figure>
-<p>4.函数名和变量名相同时<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> alert(a); </span><br><span class="line"><span class="number">2.</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="number">3.</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="number">4.</span>   alert(<span class="string">"1.function a"</span>);</span><br><span class="line"><span class="number">5.</span> &#125;</span><br><span class="line"><span class="number">6.</span> alert(a); </span><br><span class="line"><span class="number">7.</span> <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="number">8.</span> alert(a); </span><br><span class="line"><span class="number">9.</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="number">10.</span>  alert(<span class="string">"2.function a"</span>);</span><br><span class="line"><span class="number">11.</span>&#125;</span><br><span class="line"><span class="number">12.</span> alert(a);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">预解析： var a; fn = function()&#123;...&#125;</span><br><span class="line">逐行解析： </span><br><span class="line">  a = 1</span><br><span class="line">  fn()调用</span><br><span class="line">    预解析： var _a</span><br><span class="line">    逐行解析：alert(_a) //undefined</span><br><span class="line">             _a = 2</span><br><span class="line">  alert(a) //1</span><br></pre></td></tr></table></figure>
+<p>3.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  alert(a); <span class="comment">//output undefined</span></span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br><span class="line">alert(a); <span class="comment">//output 1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">预解析： var a; fn = function()&#123;...&#125;</span><br><span class="line">逐行解析： </span><br><span class="line">  a = 1</span><br><span class="line">  fn()调用</span><br><span class="line">    预解析： var _a (函数传入的参数是local variable)</span><br><span class="line">    逐行解析：alert(_a) //undefined</span><br><span class="line">             _a = 2</span><br><span class="line">  alert(a) //1</span><br></pre></td></tr></table></figure>
+<p>4.函数名和变量名相同时</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> alert(a); </span><br><span class="line"><span class="number">2.</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="number">3.</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="number">4.</span>   alert(<span class="string">"1.function a"</span>);</span><br><span class="line"><span class="number">5.</span> &#125;</span><br><span class="line"><span class="number">6.</span> alert(a); </span><br><span class="line"><span class="number">7.</span> <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="number">8.</span> alert(a); </span><br><span class="line"><span class="number">9.</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="number">10.</span>  alert(<span class="string">"2.function a"</span>);</span><br><span class="line"><span class="number">11.</span>&#125;</span><br><span class="line"><span class="number">12.</span> alert(a);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">预解析：</span><br><span class="line">  第2行：var a</span><br><span class="line">  第3行：a = function()&#123;alert(&quot;1.function a&quot;)&#125;</span><br><span class="line">  第7行：var a</span><br><span class="line">  第9行：a = function()&#123;alert(&quot;2.function a&quot;)&#125;</span><br><span class="line"></span><br><span class="line">  //变量和函数同名时，只留函数</span><br><span class="line">逐行解析：</span><br><span class="line">  第1行：alert(a) //output 整个function()&#123;alert(&quot;2.function a&quot;)&#125;</span><br><span class="line">  第2行：a = 1</span><br><span class="line">  第6行：alert(a) //output is 1</span><br><span class="line">  第7行：a = 3</span><br><span class="line">  第8行：alert(a) // output is 3</span><br><span class="line">  第12行：alert(a) //output is 3</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -536,8 +538,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/14/JavaScript/" rel="prev" title="1.JavaScript">
-                1.JavaScript <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/14/JavaScript/" rel="prev" title="2.JavaScript 数据结构">
+                2.JavaScript 数据结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -608,7 +610,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -670,7 +672,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -706,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scope-Static-Scoping"><span class="nav-number">1.</span> <span class="nav-text">Scope (Static Scoping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">2.</span> <span class="nav-text">Examples</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scope-Static-Scoping"><span class="nav-number">1.</span> <span class="nav-text">Scope (Static Scoping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析"><span class="nav-number">2.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a></li></ol></div>
             
 
           </div>

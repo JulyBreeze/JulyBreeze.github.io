@@ -99,14 +99,14 @@
   <meta name="description" content="单线程js是单线程的，即所有任务需要排队，前一个任务结束，才会执行后一个任务。为了解决如果前一个任务执行时间过长的问题，产生了任务队列task queue。 任务分两种：同步synchronous，异步asynchronous.同步：在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步：不进入主线程、而进入task queue的任务，只有task queue通知主线程，某个a">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2.JS 重点概念">
+<meta property="og:title" content="2.JS 单线程 &amp; 异步">
 <meta property="og:url" content="http://yoursite.com/2019/03/19/JSimport2/index.html">
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="单线程js是单线程的，即所有任务需要排队，前一个任务结束，才会执行后一个任务。为了解决如果前一个任务执行时间过长的问题，产生了任务队列task queue。 任务分两种：同步synchronous，异步asynchronous.同步：在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步：不进入主线程、而进入task queue的任务，只有task queue通知主线程，某个a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-20T17:18:40.858Z">
+<meta property="og:updated_time" content="2019-09-01T00:03:36.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2.JS 重点概念">
+<meta name="twitter:title" content="2.JS 单线程 &amp; 异步">
 <meta name="twitter:description" content="单线程js是单线程的，即所有任务需要排队，前一个任务结束，才会执行后一个任务。为了解决如果前一个任务执行时间过长的问题，产生了任务队列task queue。 任务分两种：同步synchronous，异步asynchronous.同步：在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步：不进入主线程、而进入task queue的任务，只有task queue通知主线程，某个a">
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>2.JS 重点概念 | Secret Garden</title>
+  <title>2.JS 单线程 & 异步 | Secret Garden</title>
   
 
 
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2.JS 重点概念
+          <h1 class="post-title" itemprop="name headline">2.JS 单线程 & 异步
 
               
             
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-20 12:18:40" itemprop="dateModified" datetime="2019-08-20T12:18:40-05:00">2019-08-20</time>
+                <time title="Modified: 2019-08-31 19:03:36" itemprop="dateModified" datetime="2019-08-31T19:03:36-05:00">2019-08-31</time>
               
             
           </span>
@@ -639,7 +639,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -701,7 +701,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
