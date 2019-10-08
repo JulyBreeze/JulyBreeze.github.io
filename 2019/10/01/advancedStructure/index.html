@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="AuthFirebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom back">
-<meta name="keywords" content="firebase">
+  <meta name="description" content="关于search的进化之路：逐个寻找O(n) -&amp;gt; binary search O(logn)(元素排列是sorted) -&amp;gt; hashMap O(1) -&amp;gt; balanced BST(Red-Black tree..) Hash方法会存在冲突，因此hash地址相同的数会存放在一个linkelist中，采用linkelist是因为链表在内存中不是连续存储，因此可以充分利用内从。但">
+<meta name="keywords" content="data structure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Firebase">
-<meta property="og:url" content="http://yoursite.com/2019/04/18/Firebase/index.html">
+<meta property="og:title" content="Advanced Data Structure">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/advancedStructure/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="AuthFirebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom back">
+<meta property="og:description" content="关于search的进化之路：逐个寻找O(n) -&amp;gt; binary search O(logn)(元素排列是sorted) -&amp;gt; hashMap O(1) -&amp;gt; balanced BST(Red-Black tree..) Hash方法会存在冲突，因此hash地址相同的数会存放在一个linkelist中，采用linkelist是因为链表在内存中不是连续存储，因此可以充分利用内从。但">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-31T21:24:09.340Z">
+<meta property="og:updated_time" content="2019-10-02T22:10:14.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Firebase">
-<meta name="twitter:description" content="AuthFirebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom back">
+<meta name="twitter:title" content="Advanced Data Structure">
+<meta name="twitter:description" content="关于search的进化之路：逐个寻找O(n) -&amp;gt; binary search O(logn)(元素排列是sorted) -&amp;gt; hashMap O(1) -&amp;gt; balanced BST(Red-Black tree..) Hash方法会存在冲突，因此hash地址相同的数会存放在一个linkelist中，采用linkelist是因为链表在内存中不是连续存储，因此可以充分利用内从。但">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/18/Firebase/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/01/advancedStructure/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Firebase | Secret Garden</title>
+  <title>Advanced Data Structure | Secret Garden</title>
   
 
 
@@ -373,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/Firebase/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/advancedStructure/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Annie Hu">
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Firebase
+          <h1 class="post-title" itemprop="name headline">Advanced Data Structure
 
               
             
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="Created: 2019-04-18 14:55:15" itemprop="dateCreated datePublished" datetime="2019-04-18T14:55:15-05:00">2019-04-18</time>
+              <time title="Created: 2019-10-01 15:28:28" itemprop="dateCreated datePublished" datetime="2019-10-01T15:28:28-05:00">2019-10-01</time>
             
 
             
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-31 16:24:09" itemprop="dateModified" datetime="2019-08-31T16:24:09-05:00">2019-08-31</time>
+                <time title="Modified: 2019-10-02 17:10:14" itemprop="dateModified" datetime="2019-10-02T17:10:14-05:00">2019-10-02</time>
               
             
           </span>
@@ -467,43 +467,33 @@
       
 
       
-        <h3 id="Auth"><a href="#Auth" class="headerlink" title="Auth"></a>Auth</h3><p>Firebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it can be easily integrated with your custom backend.</p>
-<h3 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h3><p>Uploads and downloads are robust, they restart where they stopped.<br>Cloud Storage stores your files in a Google Cloud Storage bucket, making them accessible through both Firebase and Google Cloud</p>
-<h3 id="Real-time-database"><a href="#Real-time-database" class="headerlink" title="Real-time database"></a>Real-time database</h3><h4 id="1-Docs"><a href="#1-Docs" class="headerlink" title="1.Docs"></a>1.Docs</h4><p>Realtime database is NoSQL cloud-hosted database.<br>Data is synced across all clients in realtime, and remains available when your app goes offline. All of your clients share one Realtime Database instance and automatically receive updates with the newest data.</p>
-<p>Data is stored as JSON.</p>
-<p>具有的特点和怎么实现的简要解释：<br>1)Realtime<br>Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization. Every time data changes, any connected device receives that update within milliseconds.</p>
-<p>2)Offline<br>Firebase apps remain responsive even when offline, because the Firebase Realtime Database SDK persists your data to disk locally. Once connectivity is reestablished, the client device receives any changes it missed, synchronizing it with the current server state.</p>
-<p>3)Scale across multiple databases<br>By splitting your data across multiple database instances in the same Firebase project.<br>Streamline authentication with Firebase Authentication on your project and authenticate users across your database instances. Control access to the data in each database with custom Firebase Realtime Database Rules for each database instance.</p>
-<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>网上查到的有关realtime怎么实现的：<br>It is a mix of NoSQL database, Publish/subscribe server, web-sockets server, client-side library:<br>User subscribe to some data;<br>A server keep track of those subscriptions, as soon a new subscription happen, some data is sent back as message;<br>When one client writes some data, then the pub server(like redis) broadcast this update to all the other active subscriptions.</p>
-<p>基本就是Push Model:<br>Client-side update is transmitted to server without initialzing a new connection;<br>Server pushes the update to other connected client side.</p>
-<h3 id="3-Online-offline-status"><a href="#3-Online-offline-status" class="headerlink" title="3.Online/offline status"></a>3.Online/offline status</h3><p>The server monitors the connection. If at any point, the connection times out or is actively closed by the Realtime Database client, the server checks security a second time (to make sure the operation is still valid) and then invokes the event.</p>
-<p>DB provides a special location at</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/.info/connected</span><br></pre></td></tr></table></figure>
-<p>which is updated every time the Firebase Realtime Database client’s connection state changes.</p>
-<p>这个special location不会在clients之间分享</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> connectedRef = firebase.database().ref(<span class="string">".info/connected"</span>);</span><br><span class="line"></span><br><span class="line">connectedRef.on(<span class="string">"value"</span>, (snapshot) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(snapshot.val() === <span class="keyword">true</span>) &#123;</span><br><span class="line">    alert(<span class="string">"connected"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="4-Listeners"><a href="#4-Listeners" class="headerlink" title="4.Listeners"></a>4.Listeners</h3><p>Data stored in a Firebase Realtime Database is retrieved by attaching an <strong>asynchronous listener</strong> to a database reference.<br>An event listener may receive several different events:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//used to read a static snapshot of the contents at a given database path,</span></span><br><span class="line"><span class="string">"value"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//used when retrieving a list of items from the database</span></span><br><span class="line"><span class="comment">//triggered once for each existing child and again every time a new child is added</span></span><br><span class="line"><span class="string">"child_added"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//is triggered any time a child node is modified, including any modifications to descendants of the child node</span></span><br><span class="line"><span class="string">"child_changed"</span></span><br><span class="line"><span class="string">"child_removed"</span></span><br></pre></td></tr></table></figure>
-<p>Writes from a single client will always be written to the server and broadcast out to other users in-order.<br>‘value’ events are always triggered last and are guaranteed to contain updates from any other events which occurred before that snapshot was taken.</p>
-<h3 id="5-使用"><a href="#5-使用" class="headerlink" title="5.使用"></a>5.使用</h3><p>1.Data structure<br>Data is stored as JSON objects.</p>
-<p>Avoid nesting data: flatten data structure.<br>If the data is instead split into separate paths, also called <strong>denormalization</strong>, it can be efficiently downloaded in separate calls, as it is needed.</p>
-<p>2.Read/Write Data<br>Firebase data is retrieved by attaching an asynchronous listener to a firebase.database.Reference.</p>
-<p>1)Write</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//can save data to a specified reference</span></span><br><span class="line"><span class="comment">//or replacing any existing data at that path</span></span><br><span class="line">firebase.database().ref(<span class="string">'users'</span>).set(&#123;</span><br><span class="line">  name: <span class="string">'John'</span>,</span><br><span class="line">  email: <span class="string">'xxx@gmail.com'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>2)Read &amp; Listen for changes</p>
-<p>Use ‘value’ event to read a static snapshot of the contents at a given path, as they existed at the time of the event.<br>This method is triggered once when the listener is attached and again every time the data, including children, changes.</p>
-<p>The listener receives a snapshot that contains the data at the specified location in the database at the time of the event. You can retrieve the data in the snapshot with the val() method.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//triggered every time data changed</span></span><br><span class="line"><span class="comment">//snapshot contains all data at that location</span></span><br><span class="line">xxxRef.on(<span class="string">'value'</span>, (snapshot) =&gt; &#123;</span><br><span class="line">  console.log(snapshot.val());</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//triggered once and then does not triggered again.</span></span><br><span class="line">xxxRef.once(<span class="string">'value'</span>).then((snapshot) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something here</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>You can traverse into the snapshot by calling child() to return child snapshots.</p>
-<p>3)Update  </p>
-<p>4)Push<br>push() enerates a new child location using a unique key and returns its Reference.</p>
-<p>If you provide a value to push(), the value is written to the generated location.<br>If you don’t pass a value, nothing is written to the database and the child remains empty (but you can use the Reference elsewhere).</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.push().key; <span class="comment">//get the key for a new data</span></span><br></pre></td></tr></table></figure>
-<p>5)Delete</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.remove(); <span class="comment">//delete</span></span><br></pre></td></tr></table></figure>
-<p>6)Detach listener</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//with no arguments removes all listeners at that location.</span></span><br><span class="line">.off();</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref(path)</span><br></pre></td></tr></table></figure>
+        <p>关于search的进化之路：<br>逐个寻找O(n) -&gt; binary search O(logn)(元素排列是sorted) -&gt; hashMap O(1) -&gt; balanced BST(Red-Black tree..)</p>
+<p>Hash方法会存在冲突，因此hash地址相同的数会存放在一个linkelist中，采用linkelist是因为链表在内存中不是连续存储，因此可以充分利用内从。但是如果hash的buckets比较少，而数据量很大时，会导致每个bucket里的linkedlist很长。这样就有点趋向于O(n)线性搜索了。<br>其实hashMap = linkedlist + red-black tree</p>
+<p>Most of BST operations take O(h) time, but for a skewed binary tree, the operations may become O(n).</p>
+<h3 id="Red–black-tree红黑树"><a href="#Red–black-tree红黑树" class="headerlink" title="Red–black tree红黑树"></a>Red–black tree红黑树</h3><p>Red-Black Tree is a self-balancing BST, the height of RBT is always O(logN).</p>
+<p>Five Properties:</p>
+<ul>
+<li>every node has a color either red or black</li>
+<li>root is black</li>
+<li>NULL leaf node is black</li>
+<li>red node must have differen color adjacent nodes</li>
+<li>every path froma node to any of its descendant Null node has the same number of black nodes<br>也就是说没有一条路径会比其它路径长两倍，所以红黑树是接近平衡的bst</li>
+</ul>
+<p>相比AVL，RBT允许局部比较小的不完全平衡。<br>Basic operation: add, delete, rotation(to keep tree remain red-black)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RBTree</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">T</span>&gt;&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> RBTNode&lt;T&gt; mRoot;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RBTree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mRoot = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> RED = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> BLACK = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RBTNode</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">T</span>&gt;&gt; </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> color;</span><br><span class="line">        T key;</span><br><span class="line"></span><br><span class="line">        RBTNode&lt;T&gt; parent;<span class="comment">//为了方便，所以也定义了父节点</span></span><br><span class="line">        RBTNode&lt;T&gt; left, right;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">public</span> RBTNode&lt;T key, <span class="keyword">boolean</span> color, RBTNode&lt;T&gt; parent, RBTNode&lt;T&gt; left, RBTNode&lt;T&gt; right) &#123;</span><br><span class="line">            <span class="keyword">this</span>.key = key;</span><br><span class="line">            <span class="keyword">this</span>.color = color;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">this</span>.parent = parent;</span><br><span class="line">            <span class="keyword">this</span>.left = left;</span><br><span class="line">            <span class="keyword">this</span>.right = right;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> T <span class="title">getKey</span><span class="params">()</span></span>&#123;</span><br><span class="line">          <span class="keyword">return</span> key;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> key + (<span class="keyword">this</span>.color == RED ? <span class="string">"R"</span> : <span class="string">"B"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//这些method在这里就省略不写block code了</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isRed</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isBlack</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setRed</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setBlack</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(RBTNode&lt;T&gt; node, <span class="keyword">boolean</span> color)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> RBTNode&lt;T&gt; <span class="title">search</span><span class="params">(T key)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//分别是insert和remove操作后，需要保持tree仍然是红黑树</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">insertFix</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeFix</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">leftRotation</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">rightRotation</span><span class="params">(RBTNode&lt;T&gt; node)</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>左旋和右旋：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">leftRotation</span><span class="params">(RBTNode&lt;T&gt; x)</span> </span>&#123;</span><br><span class="line">    RBTNode&lt;T&gt; y = x.right;</span><br><span class="line"></span><br><span class="line">    x.right = y.left;</span><br><span class="line">    <span class="keyword">if</span>(y.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">        y.left.parent = x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    y.parent = x.parent;</span><br><span class="line">    <span class="keyword">if</span>(x.parent != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.mRoot = y;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x.parent.left == x)&#123;</span><br><span class="line">            x.parent.left = y;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            x.parent.right = y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    y.left = x;</span><br><span class="line">    x.parent = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rightRotation</span><span class="params">(RBTNode&lt;T&gt; x)</span> </span>&#123;</span><br><span class="line">    RBTNode&lt;T&gt; x = y.left;</span><br><span class="line">    y.left = x.right;</span><br><span class="line">    <span class="keyword">if</span>(x.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">        x.right.parent = x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    x.parent = y.parent;</span><br><span class="line">    <span class="keyword">if</span>(y.parent == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.mRoot = x;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(y.parent.right == y)&#123;</span><br><span class="line">            y.parent.right = x;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            y.parent.left = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    x.right = y;</span><br><span class="line">    y.parent = x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>insert()操作，插入的node颜色为Red.<br>为什么是红色呢？因为红色可以尽可能介绍对5点property的violation。<br>1) If the insert node is the new root, we need to consider the color; otherwise, insert red node won’t affect root.<br>2) won’t affect the property that NULL node is black.<br>3) Since all path from one node to NULL node have the same number of black nodes, insert a red node won’t affect the number of black nodes.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="AVL-tree"><a href="#AVL-tree" class="headerlink" title="AVL tree"></a>AVL tree</h3><p>AVL tree is a self-balancing BST where the difference of height between left subtree and right subtree cannot be more than one.</p>
+<p>To make sure that the tree remains AVL after insertion, two re-balancing operations:</p>
+<ul>
+<li>left rotation</li>
+<li>right rotation</li>
+</ul>
+<h3 id="SkipList跳表"><a href="#SkipList跳表" class="headerlink" title="SkipList跳表"></a>SkipList跳表</h3><p>SkipList has the same asymptotic expected time bounds as balanced trees and are simpler, faster and use less space. Redis中的核心就是SkipList</p>
+<p>insert: 从最底层开始；然后抛硬币来判断是否要向上层扩展。<br>delete: 先search到后，从下往上删除</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -526,7 +516,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/firebase/" rel="tag"># firebase</a>
+            <a href="/tags/data-structure/" rel="tag"># data structure</a>
           
         </div>
       
@@ -539,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/17/JSbasics/" rel="next" title="0.JS Basics">
-                <i class="fa fa-chevron-left"></i> 0.JS Basics
+              <a href="/2019/09/15/StrongConnectedComponent/" rel="next" title="Strongly Connected Component">
+                <i class="fa fa-chevron-left"></i> Strongly Connected Component
               </a>
             
           </div>
@@ -548,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/22/java/" rel="prev" title="Java Basics">
-                Java Basics <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -725,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Auth"><span class="nav-number">1.</span> <span class="nav-text">Auth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloud-Storage"><span class="nav-number">2.</span> <span class="nav-text">Cloud Storage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-time-database"><span class="nav-number">3.</span> <span class="nav-text">Real-time database</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Docs"><span class="nav-number">3.1.</span> <span class="nav-text">1.Docs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">3.2.</span> <span class="nav-text">2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Online-offline-status"><span class="nav-number">4.</span> <span class="nav-text">3.Online/offline status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Listeners"><span class="nav-number">5.</span> <span class="nav-text">4.Listeners</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用"><span class="nav-number">6.</span> <span class="nav-text">5.使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Red–black-tree红黑树"><span class="nav-number">1.</span> <span class="nav-text">Red–black tree红黑树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVL-tree"><span class="nav-number">2.</span> <span class="nav-text">AVL tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SkipList跳表"><span class="nav-number">3.</span> <span class="nav-text">SkipList跳表</span></a></li></ol></div>
             
 
           </div>
