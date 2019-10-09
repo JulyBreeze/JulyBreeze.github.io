@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="I. StaticMath class does not have any instance variables, its constructor is private, which means that you cannot use new keyword to make an instance of Math class.理由很简单：the math methods’s behavior ac">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-12T02:25:14.698Z">
+<meta property="og:updated_time" content="2019-10-09T18:54:40.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java III - Risky &amp; Collections &amp; others">
 <meta name="twitter:description" content="I. StaticMath class does not have any instance variables, its constructor is private, which means that you cannot use new keyword to make an instance of Math class.理由很简单：the math methods’s behavior ac">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-11 21:25:14" itemprop="dateModified" datetime="2019-09-11T21:25:14-05:00">2019-09-11</time>
+                <time title="Modified: 2019-10-09 13:54:40" itemprop="dateModified" datetime="2019-10-09T13:54:40-05:00">2019-10-09</time>
               
             
           </span>
@@ -487,7 +487,7 @@
 <p>Comparable and Comparator are interface:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparable</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(T o)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(T o1, T o2)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="compare-two-objects"><a href="#compare-two-objects" class="headerlink" title="compare two objects"></a>compare two objects</h4><p>The default .hashCode() will give each object a unique number, ususally based on the object’s memory address on the heap, so no two objects will have the same hashcode.</p>
-<p>1)check reference equality<br>use == operator</p>
+<p>要比较两个object是否相等，先比较地址，再比较内容。<br>1)check reference equality<br>use == operator</p>
 <p>== operator compares the bits in the variables. If both references point to the same object, the bits wil be identical.</p>
 <p>2)check object equality<br>override .hashCode() and .equals() which inherit from Object class.</p>
 <p>Override the .hashCode() to make sure that two equivalent(指内容上的) objects return the same hashCode.</p>

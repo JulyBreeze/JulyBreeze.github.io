@@ -99,7 +99,7 @@
   <meta name="description" content="I.Most Basics1.variables - primitive and reference  primitive(8种)  1234567booleancharinteger:  byte(8bits), short(16bits), int(32bits), long(64bits)  其中，int：[-2147483648, 2147483647] //10位float(32bits">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Basics">
+<meta property="og:title" content="Java I Basics">
 <meta property="og:url" content="http://yoursite.com/2019/04/22/java/index.html">
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="I.Most Basics1.variables - primitive and reference  primitive(8种)  1234567booleancharinteger:  byte(8bits), short(16bits), int(32bits), long(64bits)  其中，int：[-2147483648, 2147483647] //10位float(32bits">
@@ -108,9 +108,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/04/22/java/relation.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/22/java/hierarchy.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/22/java/mapDemo.png">
-<meta property="og:updated_time" content="2019-09-12T01:09:37.491Z">
+<meta property="og:updated_time" content="2019-10-09T18:31:06.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java Basics">
+<meta name="twitter:title" content="Java I Basics">
 <meta name="twitter:description" content="I.Most Basics1.variables - primitive and reference  primitive(8种)  1234567booleancharinteger:  byte(8bits), short(16bits), int(32bits), long(64bits)  其中，int：[-2147483648, 2147483647] //10位float(32bits">
 <meta name="twitter:image" content="http://yoursite.com/2019/04/22/java/AccessModifier.png">
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>Java Basics | Secret Garden</title>
+  <title>Java I Basics | Secret Garden</title>
   
 
 
@@ -395,7 +395,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java Basics
+          <h1 class="post-title" itemprop="name headline">Java I Basics
 
               
             
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-11 20:09:37" itemprop="dateModified" datetime="2019-09-11T20:09:37-05:00">2019-09-11</time>
+                <time title="Modified: 2019-10-09 13:31:06" itemprop="dateModified" datetime="2019-10-09T13:31:06-05:00">2019-10-09</time>
               
             
           </span>
@@ -480,7 +480,7 @@
 <p>local variables is within a method, it must be initialized before use.</p>
 <p><strong>2.Class &amp; objects</strong><br>class is the blueprint of objects, instance is another way of saying objects.</p>
 <p>Object has instance variables(state) and methods(behavior).</p>
-<p>一旦没有某object的variable了，这个object就会被GC回收。</p>
+<p>一旦没有指向某object的variable了，这个object就会被GC回收。</p>
 <p><strong>3.Arrays</strong><br><strong>Arrays are always objects</strong>, whether they hold primitives or object references.</p>
 <p><strong>4.Java is pass everything by value</strong>, which means pass-by-copy.<br>如果传入的是一个reference variable, pass a copy of that remote control, 就是传入的是一个复制的地址。</p>
 <p><strong>5.setter &amp; getter</strong><br>用setter和getter的好处是，可以不破坏class的原有代码，而在这两个函数里做想做的事。比如instance variables are private, but setter and getter are public, so other objects can access to it by using setter and getter.</p>
@@ -494,7 +494,13 @@
 </ul>
 <h4 id="overload"><a href="#overload" class="headerlink" title="overload"></a>overload</h4><p>必须是参数的数量或类型不一样，但是对返回的类型没有要求.<br>Allow different methods to have the same name, but different signatures differing on the number or type of the input parameters. Overloading cannot distinguish two same signatures with different return type.<br>Can vary the access level in any directions, 即overload的方法可以改变access modifier的类型。</p>
 <p>Therefore, the return type can be same or different. Just make sure the number or type of input parameters are different.</p>
-<h3 id="static-amp-final"><a href="#static-amp-final" class="headerlink" title="static &amp; final"></a>static &amp; final</h3><h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><p>variable, method, class<br>static variables and methods are on the class level which is shared with the objects. 具体见Java III文章。</p>
+<h3 id="static-amp-final"><a href="#static-amp-final" class="headerlink" title="static &amp; final"></a>static &amp; final</h3><h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><p>variable, method, class, block<br>static variables and methods are on the class level which is shared with the objects.</p>
+<ul>
+<li>Static variable is initialized only once, at the start of the execution.</li>
+<li>Static method can be invoked without the need for creating an instance of a class.</li>
+<li>Only nested/inner classes can be static.<br>A static class cannot access non-static members of the Outer class. It can access only static members of Outer class.</li>
+</ul>
+<p>There is no global variable in Java. The so called “Global variable” declared after class and outside of methods is actually a class-level variable, which called instance variable.<br>具体见Java III文章。</p>
 <h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><p><strong>final变量一旦初始化后不能重新赋值</strong><br><strong>final方法不能被复写，但是可以被继承</strong><br><strong>final类不能被继承</strong>: A lot of classes in Java are final to keep security, like String class.</p>
 <ul>
 <li>variable: cannot change the value of final variable</li>
@@ -510,6 +516,7 @@
 <li>Prevent name conflicts</li>
 <li>Provide control access<br><strong>protected and default are package-level.</strong></li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建package，通常小写字母，必须放在第一行</span></span><br><span class="line"><span class="keyword">package</span> xxx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> xxx.*; <span class="comment">//*通配符</span></span><br></pre></td></tr></table></figure>
 <h3 id="Access-modifier"><a href="#Access-modifier" class="headerlink" title="Access modifier"></a>Access modifier</h3><p>restrict the scope of class, method, variable.<br><strong>class cannot be private or protected</strong>, unless the class is inner class.</p>
 <p>4 types: default(no keyword), private, protected, public.</p>
 <img src="/2019/04/22/java/AccessModifier.png" title="access_modifer">
@@ -533,12 +540,12 @@
 <h4 id="Generic-Interface"><a href="#Generic-Interface" class="headerlink" title="Generic Interface"></a>Generic Interface</h4><p>Generic interface can be typed - it can be specialized to work with a specific type when used.</p>
 <p>Eg, 对比着看一下三个block里的代码：<br>Ordinary interface:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> interface <span class="title">MyProducer</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">produce</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarProducer</span> <span class="keyword">implements</span> <span class="title">MyProducer</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">produce</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Car();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyProducer car_producer = <span class="keyword">new</span> CarProducer();</span><br><span class="line"><span class="comment">//这里用到了 cast, 即(Car)</span></span><br><span class="line">Car car = (Car) car_producer.produce();</span><br></pre></td></tr></table></figure>
-<p>But using Generic interface &lt; T &gt;, there is no need to cast the object returned from produce() method:</p>
+<p>But using Generic interface &lt; T &gt;, there is no need to cast the object returned from produce() method:<br>因为不同class implement interface method后的return type会不会不同，所以可以在interface里用&lt; T &gt;来解决。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyProducer</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> T <span class="title">produce</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarProducer</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">MyProducer</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> T <span class="title">produce</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (T) <span class="keyword">new</span> Car();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyProducer&lt;Car&gt; car_producer = <span class="keyword">new</span> CarProducer&lt;Car&gt;();</span><br><span class="line">Car car = car_producer.produce();</span><br><span class="line"></span><br><span class="line">MyProducer&lt;String&gt; car_producer_str = <span class="keyword">new</span> CarProducer&lt;String&gt;();</span><br><span class="line">String car_str = car_producer_str.produce();</span><br></pre></td></tr></table></figure>
 <p>Can lock down the generic type of the MyProducer interface when implementing it:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarProducer</span> <span class="keyword">implements</span> <span class="title">MyProducer</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Car <span class="title">produce</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Car();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h3 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//the enum constantsshould be in uppercase letters</span></span><br><span class="line"><span class="keyword">enum</span> XXX &#123;AA, BB, CC, DD&#125;;</span><br><span class="line">XXX myEnum = XXX.A;</span><br></pre></td></tr></table></figure>
+<h3 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//the enum constants should be in uppercase letters</span></span><br><span class="line"><span class="comment">//xxx相当于是这个group of constants的type name</span></span><br><span class="line"><span class="keyword">enum</span> XXX &#123;AA, BB, CC, DD&#125;;</span><br><span class="line">XXX myEnum = XXX.A;</span><br></pre></td></tr></table></figure>
 <p>enum type has a values() method</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//loop through</span></span><br><span class="line"><span class="keyword">for</span>(XXX myEnum : XXX.values()) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>(achieve polymorphism)</p>
@@ -548,7 +555,7 @@
 <li>abstract class <strong>cannot be instantiated</strong>!</li>
 <li>abstract class can implement interfaces without providing implementation of interface methods.</li>
 <li>abstract class can have constructor.</li>
-<li>abastract class can have static members.</li>
+<li>abstract class can have static members.</li>
 </ul>
 <p><strong>2) Abstract method</strong></p>
 <ul>
@@ -574,11 +581,11 @@
 <h4 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h4><p>Java virtual machine is a run-time engine to run Java applications, it is an <strong>interpreter by executing java code</strong>.</p>
 <p>1) diff between JDK, JRE, JVM<br><img src="/2019/04/22/java/relation.jpg" title="relation"></p>
 <p>JRE是橘黄色的方框里包裹的全部内容，JDK是整个蓝色框里包裹的全部内容。</p>
-<h4 id="heap-amp-stack"><a href="#heap-amp-stack" class="headerlink" title="heap &amp; stack"></a>heap &amp; stack</h4><p><strong>stack</strong> memory：<br>指程序里有一个method时，会为这个方法单独分配一块私属存储空间，用于存储这个方法内部的局部变量。当这个方法结束时，分配给这个方法的stack会释放，这个stack中的变量也将随之释放。<br>stack memory is used for execution of a thread. It contains references to the objects in the heap.</p>
+<h4 id="heap-amp-stack"><a href="#heap-amp-stack" class="headerlink" title="heap &amp; stack"></a>heap &amp; stack</h4><p><strong>stack</strong> memory：<br>指程序里有一个method时，会为这个方法单独分配一块私属存储空间，用于存储这个方法内部的局部变量。当这个方法结束时，分配给这个方法的stack会释放，这个stack中的变量也将随之释放。<br>stack memory is used for static memory allocation and the execution of a thread. 可以理解成一个thread一个stack，复制这个thread上的memory。<br>It contains primitive values that are specific to a method and references to the objects in the heap referred from the method.</p>
 <p><strong>heap</strong>：<br>stores objects and classes, new出来的对象都放在heap里，它不会随方法的结束而消失。<br>方法中的<strong>局部变量使用final修饰后，放在heap中</strong>，而不是stack中。</p>
 <p><strong>比较</strong>：</p>
 <ul>
-<li>Objects stored in heap are globally accessible; stack memory can’t be accessed by other threads.</li>
+<li>Objects stored in heap are globally accessible; stack memory cannot be accessed by other threads.</li>
 <li>heap memory lives during the application execution; Stack memory is short-lived.</li>
 <li>Stack memory size is less than Heap memory, but faster.</li>
 </ul>

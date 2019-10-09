@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="I. Inheritancekeyword: extends Subclass extends the superclass, it can inherit the members of superclass.Private members cannot be inherited.Subclass can add new methods and instance variables of its">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-12T01:56:22.483Z">
+<meta property="og:updated_time" content="2019-10-09T18:13:16.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java II - Four Pillar">
 <meta name="twitter:description" content="I. Inheritancekeyword: extends Subclass extends the superclass, it can inherit the members of superclass.Private members cannot be inherited.Subclass can add new methods and instance variables of its">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-11 20:56:22" itemprop="dateModified" datetime="2019-09-11T20:56:22-05:00">2019-09-11</time>
+                <time title="Modified: 2019-10-09 13:13:16" itemprop="dateModified" datetime="2019-10-09T13:13:16-05:00">2019-10-09</time>
               
             
           </span>
@@ -485,7 +485,7 @@
 <h4 id="keyword-super"><a href="#keyword-super" class="headerlink" title="keyword - super"></a>keyword - super</h4><p>If don’t want to completely override the superclass method, just want to add more stuff, use keyword super by using super.xxxmethodName().<br>Eg.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">roam</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">super</span>.roam(); <span class="comment">//first calls the inherited version of roam</span></span><br><span class="line">  <span class="comment">//my own roam stuff //then come back to do my own code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Is-A-Has-A"><a href="#Is-A-Has-A" class="headerlink" title="Is-A, Has-A"></a>Is-A, Has-A</h4><p>1)Is-A (one direction)<br>X extends Y, then X is-A Y.<br>Eg. Trangle is-A Shape.</p>
-<p>2)Has-A<br>X has-A Y, means A has a reference to Y, but X does not extend Y, and vice-versa.<br>Eg. Bathroom has-A Tub.</p>
+<p>2)Has-A<br>X has-A Y, means X has a reference to Y, but X does not extend Y, and vice-versa.<br>Eg. Bathroom has-A Tub.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bathroom</span> </span>&#123;</span><br><span class="line">  Tub bathtub;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tub</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Design-with-Inheritance"><a href="#Design-with-Inheritance" class="headerlink" title="Design with Inheritance"></a>Design with Inheritance</h4><p>1)Follow two rules: IS-A and HAS-A!!! Use IS-A to verify your inheritance hierarchy!</p>
 <p>Reusable code can be extracted and put in a class.<br>Eg. The printing code should be in a class Printer. All printable objects can take advantage of via a HAS-A relation.</p>
@@ -523,7 +523,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Dog a = <span class="keyword">new</span> Dog();</span><br><span class="line">Object sameDog = getObject(a);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getObject</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><font size="4"><strong>Compiler decides whether a method can be called based on the reference type, not on the actual object type！！！</strong></font><br>举例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设一个list设定为hold Object-type的元素</span></span><br><span class="line"><span class="comment">//但是我们往里add的时候add的是Dog-type的instance</span></span><br><span class="line"><span class="comment">//但在compiler眼中，obj仍然是Object-type的instance。</span></span><br><span class="line">Object obj = list.get(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">int</span> num = obj.hashCode();</span><br><span class="line">obj.bark(); <span class="comment">//编译错误，因为Object class里没有bark()</span></span><br></pre></td></tr></table></figure>
-<p>compiler不知道这是Dog类型的instance，即使放入list的时候是Dog-type instance.</p>
+<p>compiler不知道这是Dog类型的instance，即使放入list的时候是Dog-type instance.<br>我在想，为什么前面那个animal的例子就行，这个不行。是不是list.get(0)不要赋值给Object，而直接用list.get().bark就不会出错了呢。</p>
 <h4 id="inner-object"><a href="#inner-object" class="headerlink" title="inner object"></a>inner object</h4><p>由于每个class都继承自Object，所以对象object contains everything it inheris from each of its superclass，所以每个object也是instance of Object.</p>
 <p>比如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ButtonBoard bb = <span class="keyword">new</span> ButtonBoard();</span><br><span class="line">Object oo = bb;</span><br></pre></td></tr></table></figure>
@@ -551,7 +551,7 @@
 <li>Local variables<br>declared inside a method, including method parameters</li>
 </ul>
 <p><strong>2.Memory</strong><br>Two areas: objects live in heap; method invocations调用 and local variables live in stack.</p>
-<p><strong>3.Constructor</strong><br>The only way to invoke a constructor is with the keyword new. Even abstract class has constructors.<br>Constructors are not inherited.</p>
+<p><strong>3.Constructor</strong><br>The only way to invoke a constructor is with the keyword new. Even abstract class has constructors.<br><strong>Constructors are not inherited.</strong></p>
 <p>The compiler gets involved with constructor-making only if you don’t write any constructors. If you write a  constructor with arguments and you still need a constructor with no arguments, you need to build that no-arg constructor yourself.</p>
 <p><strong>4.Constructor chain</strong><br>All instance variables from every class in the inheritance tree have to be declared and initialized, so when a constructor runs, it immediately calls its superclass constructor.</p>
 <p>The superclass parts of an objects have to be fully-formed before the subclass parts can be constructed.</p>
