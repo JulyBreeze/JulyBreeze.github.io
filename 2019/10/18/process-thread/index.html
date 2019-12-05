@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Secret Garden">
-<meta property="og:url" content="http://yoursite.com/tags/aws/index.html">
+  <meta name="description" content="Process &amp;amp; ThreadProcess is an executing program, one or more threads run in the context of the process. 这些threads共享所在的process的资源。每个process有独立的地址空间，互相不影响。每一个process对应一个JVM实例，多个thread共享JVM里的堆。(JVM是多">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 进程process和线程Thread">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/process-thread/index.html">
 <meta property="og:site_name" content="Secret Garden">
+<meta property="og:description" content="Process &amp;amp; ThreadProcess is an executing program, one or more threads run in the context of the process. 这些threads共享所在的process的资源。每个process有独立的地址空间，互相不影响。每一个process对应一个JVM实例，多个thread共享JVM里的堆。(JVM是多">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-25T21:17:46.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Secret Garden">
+<meta name="twitter:title" content="Java 进程process和线程Thread">
+<meta name="twitter:description" content="Process &amp;amp; ThreadProcess is an executing program, one or more threads run in the context of the process. 这些threads共享所在的process的资源。每个process有独立的地址空间，互相不影响。每一个process对应一个JVM实例，多个thread共享JVM里的堆。(JVM是多">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/aws/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/18/process-thread/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>Tag: aws | Secret Garden</title>
+  <title>Java 进程process和线程Thread | Secret Garden</title>
   
 
 
@@ -167,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -243,7 +248,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -348,82 +353,206 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>aws<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/process-thread/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Annie Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Secret Garden">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/09/12/AWS/" itemprop="url">
-            
-              <span itemprop="name">AWS</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Java 进程process和线程Thread
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-12T20:41:34-05:00" content="2019-09-12">
-          09-12
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-10-18 19:53:56" itemprop="dateCreated datePublished" datetime="2019-10-18T19:53:56-05:00">2019-10-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-10-25 16:17:46" itemprop="dateModified" datetime="2019-10-25T16:17:46-05:00">2019-10-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Process-amp-Thread"><a href="#Process-amp-Thread" class="headerlink" title="Process &amp; Thread"></a>Process &amp; Thread</h3><p>Process is an executing program, one or more threads run in the context of the process. 这些threads共享所在的process的资源。每个process有独立的地址空间，互相不影响。每一个process对应一个JVM实例，多个thread共享JVM里的堆。(JVM是多线程的)</p>
+<p>process是资源分配的最小单位；thread是CPU调度的最小单位。<br>A thread is the basic unit to which operating system allocates processor time.  </p>
+<p>单核cpu下的”concurrent”其实就是分给每个process的时间片很短，频率高，导致看起来像同时进行多个进程。</p>
+<p>thread有自己的堆栈和局部变量，没有独立的地址空间。所以一个thread出问题，其所在的process也会出问题。<br>process切换需要耗费的时间和资源比切换thread要大。</p>
+<h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><p>When a Java program starts up, one thread begins running immediately. This is usually called the <strong>main thread</strong> of your program.</p>
+<ul>
+<li>“child” threads will be spawned from the main thread.主线程产生其他子线程</li>
+<li>It must be the last thread to finish execution. When the main thread stops, your program terminates.主线程最后一个运行</li>
+</ul>
+<p><code>Thread.currentThread()</code> return the reference to current thread.</p>
+<p>A thread have 3 states: running, ready, and blocked.<br>Threads share memory, but process is isolated.</p>
+<p>run(), start()的区别：<br>这两个方法没有可比性。start创建一个新的子线程来执行方法；run只是Thread的一个普通方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/16/TSP/" rel="next" title="Traveling Salesman Problem">
+                <i class="fa fa-chevron-left"></i> Traveling Salesman Problem
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -444,8 +573,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -555,6 +693,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-amp-Thread"><span class="nav-number">1.</span> <span class="nav-text">Process &amp; Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread"><span class="nav-number">2.</span> <span class="nav-text">Thread</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -684,6 +839,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -694,6 +853,8 @@
 
   
 
+
+  
 
 
   

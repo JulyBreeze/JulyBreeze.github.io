@@ -105,7 +105,7 @@
 <meta property="og:description" content="Document Object Model is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content structure, and style of a document.   html is root. nod">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/03/18/JavascriptDOM/reactHISTORY.png">
-<meta property="og:updated_time" content="2019-09-01T21:39:18.456Z">
+<meta property="og:updated_time" content="2019-10-10T00:00:29.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5.Javascript DOM &amp; BOM">
 <meta name="twitter:description" content="Document Object Model is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content structure, and style of a document.   html is root. nod">
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-01 16:39:18" itemprop="dateModified" datetime="2019-09-01T16:39:18-05:00">2019-09-01</time>
+                <time title="Modified: 2019-10-09 19:00:29" itemprop="dateModified" datetime="2019-10-09T19:00:29-05:00">2019-10-09</time>
               
             
           </span>
@@ -482,7 +482,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="keyword">var</span> nodes = obj.childNodes;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*IE has 1 childnodes, non-IE has 3 childnodes</span></span><br><span class="line"><span class="comment">div后面的空白处算一个text node，所以有text node、a 、text node三个子节点</span></span><br><span class="line"><span class="comment">但如果上面html语句去除回车写成一行, nonIE: the length = 1</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">console</span>.log(nodes.length);</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">  如果想得到span元素的内容</span></span><br><span class="line"><span class="comment">  用node.innerHTML</span></span><br><span class="line"><span class="comment">  而不是用node.nodeValue,这个对于元素节点永远输出null</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br></pre></td></tr></table></figure>
 <p>例2：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>link<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>link<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"></span><br><span class="line">通过obj.firstChild，obj.lastChild可以得到其第一个和最后一个的子节点</span><br><span class="line">通过obj.parentNode可以获得父节点</span><br><span class="line">通过obj.previousSibling、nextSibling获得同级别的前一个、下一个节点</span><br></pre></td></tr></table></figure>
 <h3 id="attributes-node"><a href="#attributes-node" class="headerlink" title="attributes node"></a>attributes node</h3><p>例1：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -643,7 +643,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -711,7 +711,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

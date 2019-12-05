@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1.Five primitive typesNull, Undefined, Boolean, Number, String这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;   reference type得值是object，存放在heap内存中。 1234//求xxx是哪种基本类型typeof xxx//判断aa是否是bb的instance，或者说aa是否是bb这个typea">
+  <meta name="description" content="1.Five primitive typesJavascript is a scripting language(executed without being compiled). Null, Undefined, Boolean, Number, String这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;   reference type得值是object，存放在heap内">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0.JS Basics">
 <meta property="og:url" content="http://yoursite.com/2019/04/17/JSbasics/index.html">
 <meta property="og:site_name" content="Secret Garden">
-<meta property="og:description" content="1.Five primitive typesNull, Undefined, Boolean, Number, String这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;   reference type得值是object，存放在heap内存中。 1234//求xxx是哪种基本类型typeof xxx//判断aa是否是bb的instance，或者说aa是否是bb这个typea">
+<meta property="og:description" content="1.Five primitive typesJavascript is a scripting language(executed without being compiled). Null, Undefined, Boolean, Number, String这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;   reference type得值是object，存放在heap内">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-01T00:21:17.043Z">
+<meta property="og:updated_time" content="2019-10-09T21:29:12.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="0.JS Basics">
-<meta name="twitter:description" content="1.Five primitive typesNull, Undefined, Boolean, Number, String这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;   reference type得值是object，存放在heap内存中。 1234//求xxx是哪种基本类型typeof xxx//判断aa是否是bb的instance，或者说aa是否是bb这个typea">
+<meta name="twitter:description" content="1.Five primitive typesJavascript is a scripting language(executed without being compiled). Null, Undefined, Boolean, Number, String这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;   reference type得值是object，存放在heap内">
 
 
 
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-31 19:21:17" itemprop="dateModified" datetime="2019-08-31T19:21:17-05:00">2019-08-31</time>
+                <time title="Modified: 2019-10-09 16:29:12" itemprop="dateModified" datetime="2019-10-09T16:29:12-05:00">2019-10-09</time>
               
             
           </span>
@@ -467,7 +467,8 @@
       
 
       
-        <h3 id="1-Five-primitive-types"><a href="#1-Five-primitive-types" class="headerlink" title="1.Five primitive types"></a>1.Five primitive types</h3><p>Null, Undefined, Boolean, Number, String<br>这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;  </p>
+        <h3 id="1-Five-primitive-types"><a href="#1-Five-primitive-types" class="headerlink" title="1.Five primitive types"></a>1.Five primitive types</h3><p>Javascript is a scripting language(executed without being compiled).</p>
+<p>Null, Undefined, Boolean, Number, String<br>这些基本类型在内存中占据的空间大小是固定的，保存在stack内存中;  </p>
 <p>reference type得值是object，存放在heap内存中。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//求xxx是哪种基本类型</span></span><br><span class="line"><span class="keyword">typeof</span> xxx</span><br><span class="line"><span class="comment">//判断aa是否是bb的instance，或者说aa是否是bb这个type</span></span><br><span class="line">aa <span class="keyword">instanceof</span> bb</span><br></pre></td></tr></table></figure>
 <p>具体使用：</p>
@@ -481,7 +482,7 @@
 <p>搜索某个变量从chain的首端开始，往后直到找到为止。</p>
 <p>举例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color = <span class="string">"blue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> anotherColor = <span class="string">"red"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">swapColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> tempColor = anotherColor;</span><br><span class="line">    anotherColor = color;</span><br><span class="line">    color = tempColor;</span><br><span class="line">    <span class="comment">//可以访问color, anotherColor,tempColor</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//可以访问color和anotherColr，不能访问tempColor</span></span><br><span class="line">  swapColors();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//只能访问color</span></span><br><span class="line">changeColor();</span><br></pre></td></tr></table></figure>
-<p>同之前的文章中总结的一样：父环境不可以获取子环境的变量，但子环境可以获取父环境的变量</p>
+<p>父环境不可以获取子环境的变量，但子环境可以获取父环境的变量</p>
 <p>3) 延长scope chain</p>
 <p>在chain的前端增加一个variable object，两种方式：</p>
 <ul>
@@ -614,7 +615,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -682,7 +683,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
