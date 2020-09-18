@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Secret Garden">
 <meta property="og:description" content="1. Core FrameworkAOP: Aspect-oriented programmingadd functionality to objects declarativelyallows you to create these applicationwide service-Logging, security, transactions… Core Container:Beans, Cor">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-24T05:07:44.836Z">
+<meta property="og:updated_time" content="2020-09-18T19:53:17.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringNote1">
 <meta name="twitter:description" content="1. Core FrameworkAOP: Aspect-oriented programmingadd functionality to objects declarativelyallows you to create these applicationwide service-Logging, security, transactions… Core Container:Beans, Cor">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-24 00:07:44" itemprop="dateModified" datetime="2020-06-24T00:07:44-05:00">2020-06-24</time>
+                <time title="Modified: 2020-09-18 14:53:17" itemprop="dateModified" datetime="2020-09-18T14:53:17-05:00">2020-09-18</time>
               
             
           </span>
@@ -467,17 +467,17 @@
       
 
       
-        <h3 id="1-Core-Framework"><a href="#1-Core-Framework" class="headerlink" title="1. Core Framework"></a>1. Core Framework</h3><p>AOP: Aspect-oriented programming<br>add functionality to objects declaratively<br>allows you to create these applicationwide service<br>-Logging, security, transactions…</p>
-<p>Core Container:<br>Beans, Core, SpEL(spring expression language), Context(hold beans in memory)</p>
-<p>Infrastructure:<br>AOP, Aspects, Instrumentation(to work with ), Messaging</p>
-<p>Data Access Layer:<br>JDBC, ORM(Object to Relational Mapping, Integration with Hibernate and JPAs),<br>Transactions(heavy use of AOP), OXM(), JMS(Java Message Service, to send async messages to a message queue)</p>
+        <h3 id="1-Core-Framework"><a href="#1-Core-Framework" class="headerlink" title="1. Core Framework"></a>1. Core Framework</h3><p><strong>AOP</strong>: Aspect-oriented programming<br>add functionality to objects declaratively<br>allows you to create these applicationwide service<br>-Logging, security, transactions…</p>
+<p><strong>Core Container</strong>:<br>Beans, Core, SpEL(spring expression language), Context(hold beans in memory)</p>
+<p><strong>Infrastructure</strong>:<br>AOP, Aspects, Instrumentation(to work with ), Messaging</p>
+<p><strong>Data Access Layer</strong>:<br>JDBC, ORM(Object to Relational Mapping, Integration with Hibernate and JPAs),<br>Transactions(heavy use of AOP), OXM(), JMS(Java Message Service, to send async messages to a message queue)</p>
 <p>Web Layer (Home of spring mvc framework)<br>Servlet, WebSocket, Web, Portlet</p>
 <p>Test Layer:(TDD)<br>Unit, Integration, Mock</p>
 <h3 id="Spring-Projects"><a href="#Spring-Projects" class="headerlink" title="Spring Projects"></a>Spring Projects</h3><p>spring.io<br>add-on modules: spring cloud, data, security, batch…</p>
 <h3 id="Set-up-environment"><a href="#Set-up-environment" class="headerlink" title="Set up environment"></a>Set up environment</h3><p>1.JDK installed<br>2.java app server(tomcat server), ide(eclipse ide)<br>after tomcat installed, go to localhost:8080 to check if installed successfully</p>
 <p>install eclipse for java developer</p>
 <p>3.create eclipse project<br>4.download spring jar files<br>5.add jar files to eclipse project … build path</p>
-<h3 id="IoC-inversion-of-control"><a href="#IoC-inversion-of-control" class="headerlink" title="IoC (inversion of control)"></a>IoC (inversion of control)</h3><p>outsource交办 the construction and management of objects</p>
+<h3 id="IoC-inversion颠倒-倒置-of-control"><a href="#IoC-inversion颠倒-倒置-of-control" class="headerlink" title="IoC (inversion颠倒 倒置 of control)"></a>IoC (inversion颠倒 倒置 of control)</h3><p>outsource交办 the construction and management of objects</p>
 <p>Setter Injection Process<br>1) Create setter method in class for injection<br>2) configure the dependency injection in spring config file</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xml</span></span><br><span class="line">&lt;property name=<span class="string">"abc"</span> ref=<span class="string">""</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//java, capitalize the first letter of name</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAbs</span><span class="params">(...)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Annotations"><a href="#Annotations" class="headerlink" title="Annotations"></a>Annotations</h3><p>Annotations are special labels/markers added to Java class, provide meta-data about the class<br>Processed at compile time or run-time for special processing</p>
@@ -723,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Core-Framework"><span class="nav-number">1.</span> <span class="nav-text">1. Core Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Projects"><span class="nav-number">2.</span> <span class="nav-text">Spring Projects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-up-environment"><span class="nav-number">3.</span> <span class="nav-text">Set up environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IoC-inversion-of-control"><span class="nav-number">4.</span> <span class="nav-text">IoC (inversion of control)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Annotations"><span class="nav-number">5.</span> <span class="nav-text">Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depenency-Injection-with-Annotation-and-Auto-wiring"><span class="nav-number">6.</span> <span class="nav-text">Depenency Injection with Annotation and Auto-wiring</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-constructor-injection-process"><span class="nav-number">6.1.</span> <span class="nav-text">1.constructor injection process</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-MVC"><span class="nav-number">7.</span> <span class="nav-text">Spring MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request-params-and-Request-mapping"><span class="nav-number">8.</span> <span class="nav-text">Request params and Request mapping</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Core-Framework"><span class="nav-number">1.</span> <span class="nav-text">1. Core Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Projects"><span class="nav-number">2.</span> <span class="nav-text">Spring Projects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-up-environment"><span class="nav-number">3.</span> <span class="nav-text">Set up environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IoC-inversion颠倒-倒置-of-control"><span class="nav-number">4.</span> <span class="nav-text">IoC (inversion颠倒 倒置 of control)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Annotations"><span class="nav-number">5.</span> <span class="nav-text">Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depenency-Injection-with-Annotation-and-Auto-wiring"><span class="nav-number">6.</span> <span class="nav-text">Depenency Injection with Annotation and Auto-wiring</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-constructor-injection-process"><span class="nav-number">6.1.</span> <span class="nav-text">1.constructor injection process</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-MVC"><span class="nav-number">7.</span> <span class="nav-text">Spring MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request-params-and-Request-mapping"><span class="nav-number">8.</span> <span class="nav-text">Request params and Request mapping</span></a></li></ol></div>
             
 
           </div>
